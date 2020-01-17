@@ -5,6 +5,7 @@ using UnityEngine;
 public class InstantiateBloodSplat : MonoBehaviour
 {
     public GameObject[] BloodSplats;
+    public GameObject SmallBloodSplat;
 
     private GameObject _bloodSplat;
 
@@ -16,6 +17,7 @@ public class InstantiateBloodSplat : MonoBehaviour
     private void SpawnBloodSplat(Vector3 point)
     {
         Instantiate(_bloodSplat, point, _bloodSplat.transform.rotation);
+        Instantiate(SmallBloodSplat, transform.position, SmallBloodSplat.transform.rotation);
         Destroy(gameObject);
     }
 
