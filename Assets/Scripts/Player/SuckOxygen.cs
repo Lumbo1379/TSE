@@ -11,6 +11,7 @@ public class SuckOxygen : MonoBehaviour
     public GameObject EffectOrigin;
     [Range(0, 5)] public float EffectDelay;
     public GameObject BloodExplosionEffect;
+    public GameObject DeathBloodSplat;
 
     private GameObject _currentSelection;
     private Animator _playerAnimator;
@@ -105,8 +106,14 @@ public class SuckOxygen : MonoBehaviour
 
     public void BlowUpAnimalEvent()
     {
+        var selectionPos = _currentSelection.GetComponent<SkinnedMeshRenderer>().bounds.center;
+
+        Instantiate(DeathBloodSplat,
+            new Vector3(selectionPos.x, 0.51f, selectionPos.z),
+            DeathBloodSplat.transform.rotation);
+
         Instantiate(BloodExplosionEffect,
-            _currentSelection.transform.parent.transform.position,
+            selectionPos,
             BloodExplosionEffect.transform.rotation);
 
         EffectOrigin.transform.parent = transform;
