@@ -14,11 +14,13 @@ public class SuckOxygen : MonoBehaviour
 
     private GameObject _currentSelection;
     private Animator _playerAnimator;
+    private IKControl _iKControl;
 
     private void Start()
     {
         _currentSelection = null;
         _playerAnimator = GetComponent<Animator>();
+        _iKControl = GetComponent<IKControl>();
     }
 
     private void Update()
@@ -60,6 +62,10 @@ public class SuckOxygen : MonoBehaviour
 
             _currentSelection = collision.gameObject;
 
+            _iKControl.IKActive = true;
+            _iKControl.LookObject = _currentSelection.transform;
+            _iKControl.RightHand = _currentSelection.transform;
+
             var animator = collision.parent.GetComponent<Animator>();
             animator.SetBool("Balloon", true);
         }
@@ -70,8 +76,12 @@ public class SuckOxygen : MonoBehaviour
         if (_currentSelection != null)
         {
             _currentSelection.transform.parent.GetComponent<Animator>().SetBool("Balloon", false);
-            _currentSelection = null; // Set null to work for when use holds right click but hovers off rabbit
+            _currentSelection = null; // Set null to work for when use holds right click but moves off rabbit
         }
+
+        _iKControl.IKActive = false;
+        _iKControl.LookObject = null;
+        _iKControl.RightHand = null;
 
         _playerAnimator.SetBool("isSucking", switchSeamless);
         LifeForceSuckEffect.SetActive(switchSeamless);

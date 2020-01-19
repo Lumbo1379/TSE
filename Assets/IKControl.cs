@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class IKControl : MonoBehaviour
 {
-    public bool IKActive;
-    public Transform RightHand;
-    public Transform LookObject;
+    public bool IKActive { get; set; }
+    public Transform RightHand { get; set; }
+    public Transform LookObject { get; set; }
 
     private Animator _animator;
 
