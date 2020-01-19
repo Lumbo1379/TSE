@@ -34,7 +34,7 @@ public class IKControl : MonoBehaviour
                 // Set the right hand target position and rotation, if one has been assigned
                 if (RightHand != null)
                 {
-                    _animator.SetIKPositionWeight(AvatarIKGoal.RightHand, 1);
+                    _animator.SetIKPositionWeight(AvatarIKGoal.RightHand, 0.25f);
                     //_animator.SetIKRotationWeight(AvatarIKGoal.RightHand, 1);
                     _animator.SetIKPosition(AvatarIKGoal.RightHand, RightHand.position);
                     //_animator.SetIKRotation(AvatarIKGoal.RightHand, RightHand.rotation);
