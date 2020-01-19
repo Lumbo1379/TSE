@@ -108,10 +108,6 @@ public class SuckOxygen : MonoBehaviour
     {
         var selectionPos = _currentSelection.GetComponent<SkinnedMeshRenderer>().bounds.center;
 
-        Instantiate(DeathBloodSplat,
-            new Vector3(selectionPos.x, 0.51f, selectionPos.z),
-            DeathBloodSplat.transform.rotation);
-
         Instantiate(BloodExplosionEffect,
             selectionPos,
             BloodExplosionEffect.transform.rotation);

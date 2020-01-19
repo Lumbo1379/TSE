@@ -77,13 +77,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31b9ebd29c912a04183fb8931c572323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BloodSplats:
-  - {fileID: 3763499388183681443, guid: d9ac4e5b836976c44afc5e83200b56dd, type: 3}
-  - {fileID: 8926706609165791245, guid: ba15b813c8bdf664a9eba3790327c99b, type: 3}
-  - {fileID: 4049427147046645786, guid: 9ac260d56084ae64eb19415f5d44055b, type: 3}
-  - {fileID: 854065751570155603, guid: 0a46c1f8d42795b47836fc65cfdaa089, type: 3}
+  BloodSplatSprites:
+  - {fileID: 21300000, guid: fc40f79b1a1037b42a264708360d542e, type: 3}
+  - {fileID: 21300000, guid: 807d5cc48cc998041b1ddfcdb3d2e573, type: 3}
+  - {fileID: 21300000, guid: 3ae12a82b9e79624bb55816fbbe0902b, type: 3}
+  - {fileID: 21300000, guid: b1877c00ff27b7d4d87cfb35e4c4c9b5, type: 3}
+  BloodSplatMaterials:
+  - {fileID: 2100000, guid: a29ebbed09878ff4c848304076a8cdd3, type: 2}
+  - {fileID: 2100000, guid: 9f38b848666a1f84ca1114f033314a8e, type: 2}
+  - {fileID: 2100000, guid: 4e2148e97774f7f459c212f401de5da6, type: 2}
+  - {fileID: 2100000, guid: f0dbfb8b4dfdb6d4dab16f0995d07f7b, type: 2}
   SmallBloodSplat: {fileID: 1884396171211911543, guid: f477811a195928f41ae995596d9d8686,
     type: 3}
+  DecalProjector: {fileID: 9003598403829109312, guid: 59eeda59d4204ae4a82eea18d77c5572,
+    type: 3}
+  DecalLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &7494376507595931108
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,13 +171,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31b9ebd29c912a04183fb8931c572323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BloodSplats:
-  - {fileID: 3763499388183681443, guid: d9ac4e5b836976c44afc5e83200b56dd, type: 3}
-  - {fileID: 8926706609165791245, guid: ba15b813c8bdf664a9eba3790327c99b, type: 3}
-  - {fileID: 4049427147046645786, guid: 9ac260d56084ae64eb19415f5d44055b, type: 3}
-  - {fileID: 854065751570155603, guid: 0a46c1f8d42795b47836fc65cfdaa089, type: 3}
+  BloodSplatSprites:
+  - {fileID: 21300000, guid: fc40f79b1a1037b42a264708360d542e, type: 3}
+  - {fileID: 21300000, guid: 807d5cc48cc998041b1ddfcdb3d2e573, type: 3}
+  - {fileID: 21300000, guid: 3ae12a82b9e79624bb55816fbbe0902b, type: 3}
+  - {fileID: 21300000, guid: b1877c00ff27b7d4d87cfb35e4c4c9b5, type: 3}
+  BloodSplatMaterials:
+  - {fileID: 2100000, guid: a29ebbed09878ff4c848304076a8cdd3, type: 2}
+  - {fileID: 2100000, guid: 9f38b848666a1f84ca1114f033314a8e, type: 2}
+  - {fileID: 2100000, guid: 4e2148e97774f7f459c212f401de5da6, type: 2}
+  - {fileID: 2100000, guid: f0dbfb8b4dfdb6d4dab16f0995d07f7b, type: 2}
   SmallBloodSplat: {fileID: 1884396171211911543, guid: f477811a195928f41ae995596d9d8686,
     type: 3}
+  DecalProjector: {fileID: 9003598403829109312, guid: 59eeda59d4204ae4a82eea18d77c5572,
+    type: 3}
+  DecalLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &7494376507608219716
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,13 +265,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31b9ebd29c912a04183fb8931c572323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BloodSplats:
-  - {fileID: 3763499388183681443, guid: d9ac4e5b836976c44afc5e83200b56dd, type: 3}
-  - {fileID: 8926706609165791245, guid: ba15b813c8bdf664a9eba3790327c99b, type: 3}
-  - {fileID: 4049427147046645786, guid: 9ac260d56084ae64eb19415f5d44055b, type: 3}
-  - {fileID: 854065751570155603, guid: 0a46c1f8d42795b47836fc65cfdaa089, type: 3}
+  BloodSplatSprites:
+  - {fileID: 21300000, guid: fc40f79b1a1037b42a264708360d542e, type: 3}
+  - {fileID: 21300000, guid: 807d5cc48cc998041b1ddfcdb3d2e573, type: 3}
+  - {fileID: 21300000, guid: 3ae12a82b9e79624bb55816fbbe0902b, type: 3}
+  - {fileID: 21300000, guid: b1877c00ff27b7d4d87cfb35e4c4c9b5, type: 3}
+  BloodSplatMaterials:
+  - {fileID: 2100000, guid: a29ebbed09878ff4c848304076a8cdd3, type: 2}
+  - {fileID: 2100000, guid: 9f38b848666a1f84ca1114f033314a8e, type: 2}
+  - {fileID: 2100000, guid: 4e2148e97774f7f459c212f401de5da6, type: 2}
+  - {fileID: 2100000, guid: f0dbfb8b4dfdb6d4dab16f0995d07f7b, type: 2}
   SmallBloodSplat: {fileID: 1884396171211911543, guid: f477811a195928f41ae995596d9d8686,
     type: 3}
+  DecalProjector: {fileID: 9003598403829109312, guid: 59eeda59d4204ae4a82eea18d77c5572,
+    type: 3}
+  DecalLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &7494376507610474020
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,13 +359,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31b9ebd29c912a04183fb8931c572323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BloodSplats:
-  - {fileID: 3763499388183681443, guid: d9ac4e5b836976c44afc5e83200b56dd, type: 3}
-  - {fileID: 8926706609165791245, guid: ba15b813c8bdf664a9eba3790327c99b, type: 3}
-  - {fileID: 4049427147046645786, guid: 9ac260d56084ae64eb19415f5d44055b, type: 3}
-  - {fileID: 854065751570155603, guid: 0a46c1f8d42795b47836fc65cfdaa089, type: 3}
+  BloodSplatSprites:
+  - {fileID: 21300000, guid: fc40f79b1a1037b42a264708360d542e, type: 3}
+  - {fileID: 21300000, guid: 807d5cc48cc998041b1ddfcdb3d2e573, type: 3}
+  - {fileID: 21300000, guid: 3ae12a82b9e79624bb55816fbbe0902b, type: 3}
+  - {fileID: 21300000, guid: b1877c00ff27b7d4d87cfb35e4c4c9b5, type: 3}
+  BloodSplatMaterials:
+  - {fileID: 2100000, guid: a29ebbed09878ff4c848304076a8cdd3, type: 2}
+  - {fileID: 2100000, guid: 9f38b848666a1f84ca1114f033314a8e, type: 2}
+  - {fileID: 2100000, guid: 4e2148e97774f7f459c212f401de5da6, type: 2}
+  - {fileID: 2100000, guid: f0dbfb8b4dfdb6d4dab16f0995d07f7b, type: 2}
   SmallBloodSplat: {fileID: 1884396171211911543, guid: f477811a195928f41ae995596d9d8686,
     type: 3}
+  DecalProjector: {fileID: 9003598403829109312, guid: 59eeda59d4204ae4a82eea18d77c5572,
+    type: 3}
+  DecalLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &7494376507719741843
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,13 +453,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31b9ebd29c912a04183fb8931c572323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BloodSplats:
-  - {fileID: 3763499388183681443, guid: d9ac4e5b836976c44afc5e83200b56dd, type: 3}
-  - {fileID: 8926706609165791245, guid: ba15b813c8bdf664a9eba3790327c99b, type: 3}
-  - {fileID: 4049427147046645786, guid: 9ac260d56084ae64eb19415f5d44055b, type: 3}
-  - {fileID: 854065751570155603, guid: 0a46c1f8d42795b47836fc65cfdaa089, type: 3}
+  BloodSplatSprites:
+  - {fileID: 21300000, guid: fc40f79b1a1037b42a264708360d542e, type: 3}
+  - {fileID: 21300000, guid: 807d5cc48cc998041b1ddfcdb3d2e573, type: 3}
+  - {fileID: 21300000, guid: 3ae12a82b9e79624bb55816fbbe0902b, type: 3}
+  - {fileID: 21300000, guid: b1877c00ff27b7d4d87cfb35e4c4c9b5, type: 3}
+  BloodSplatMaterials:
+  - {fileID: 2100000, guid: a29ebbed09878ff4c848304076a8cdd3, type: 2}
+  - {fileID: 2100000, guid: 9f38b848666a1f84ca1114f033314a8e, type: 2}
+  - {fileID: 2100000, guid: 4e2148e97774f7f459c212f401de5da6, type: 2}
+  - {fileID: 2100000, guid: f0dbfb8b4dfdb6d4dab16f0995d07f7b, type: 2}
   SmallBloodSplat: {fileID: 1884396171211911543, guid: f477811a195928f41ae995596d9d8686,
     type: 3}
+  DecalProjector: {fileID: 9003598403829109312, guid: 59eeda59d4204ae4a82eea18d77c5572,
+    type: 3}
+  DecalLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &7494376507759564927
 GameObject:
   m_ObjectHideFlags: 0
@@ -1260,13 +1310,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31b9ebd29c912a04183fb8931c572323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BloodSplats:
-  - {fileID: 3763499388183681443, guid: d9ac4e5b836976c44afc5e83200b56dd, type: 3}
-  - {fileID: 8926706609165791245, guid: ba15b813c8bdf664a9eba3790327c99b, type: 3}
-  - {fileID: 4049427147046645786, guid: 9ac260d56084ae64eb19415f5d44055b, type: 3}
-  - {fileID: 854065751570155603, guid: 0a46c1f8d42795b47836fc65cfdaa089, type: 3}
+  BloodSplatSprites:
+  - {fileID: 21300000, guid: fc40f79b1a1037b42a264708360d542e, type: 3}
+  - {fileID: 21300000, guid: 807d5cc48cc998041b1ddfcdb3d2e573, type: 3}
+  - {fileID: 21300000, guid: 3ae12a82b9e79624bb55816fbbe0902b, type: 3}
+  - {fileID: 21300000, guid: b1877c00ff27b7d4d87cfb35e4c4c9b5, type: 3}
+  BloodSplatMaterials:
+  - {fileID: 2100000, guid: a29ebbed09878ff4c848304076a8cdd3, type: 2}
+  - {fileID: 2100000, guid: 9f38b848666a1f84ca1114f033314a8e, type: 2}
+  - {fileID: 2100000, guid: 4e2148e97774f7f459c212f401de5da6, type: 2}
+  - {fileID: 2100000, guid: f0dbfb8b4dfdb6d4dab16f0995d07f7b, type: 2}
   SmallBloodSplat: {fileID: 1884396171211911543, guid: f477811a195928f41ae995596d9d8686,
     type: 3}
+  DecalProjector: {fileID: 9003598403829109312, guid: 59eeda59d4204ae4a82eea18d77c5572,
+    type: 3}
+  DecalLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &7494376509262154493
 GameObject:
   m_ObjectHideFlags: 0
@@ -1385,6 +1445,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7494376509268726806}
+  - component: {fileID: 1961442324304179797}
   m_Layer: 0
   m_Name: Blood Explosion
   m_TagString: Untagged
@@ -1414,6 +1475,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1961442324304179797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7494376509268726807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43134b6ecda03f147aa25c1da3eb5458, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Delay: 7
 --- !u!1 &7494376509333864800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1491,13 +1565,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31b9ebd29c912a04183fb8931c572323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BloodSplats:
-  - {fileID: 3763499388183681443, guid: d9ac4e5b836976c44afc5e83200b56dd, type: 3}
-  - {fileID: 8926706609165791245, guid: ba15b813c8bdf664a9eba3790327c99b, type: 3}
-  - {fileID: 4049427147046645786, guid: 9ac260d56084ae64eb19415f5d44055b, type: 3}
-  - {fileID: 854065751570155603, guid: 0a46c1f8d42795b47836fc65cfdaa089, type: 3}
+  BloodSplatSprites:
+  - {fileID: 21300000, guid: fc40f79b1a1037b42a264708360d542e, type: 3}
+  - {fileID: 21300000, guid: 807d5cc48cc998041b1ddfcdb3d2e573, type: 3}
+  - {fileID: 21300000, guid: 3ae12a82b9e79624bb55816fbbe0902b, type: 3}
+  - {fileID: 21300000, guid: b1877c00ff27b7d4d87cfb35e4c4c9b5, type: 3}
+  BloodSplatMaterials:
+  - {fileID: 2100000, guid: a29ebbed09878ff4c848304076a8cdd3, type: 2}
+  - {fileID: 2100000, guid: 9f38b848666a1f84ca1114f033314a8e, type: 2}
+  - {fileID: 2100000, guid: 4e2148e97774f7f459c212f401de5da6, type: 2}
+  - {fileID: 2100000, guid: f0dbfb8b4dfdb6d4dab16f0995d07f7b, type: 2}
   SmallBloodSplat: {fileID: 1884396171211911543, guid: f477811a195928f41ae995596d9d8686,
     type: 3}
+  DecalProjector: {fileID: 9003598403829109312, guid: 59eeda59d4204ae4a82eea18d77c5572,
+    type: 3}
+  DecalLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &7494376509521362686
 GameObject:
   m_ObjectHideFlags: 0
@@ -1575,10 +1659,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31b9ebd29c912a04183fb8931c572323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BloodSplats:
-  - {fileID: 3763499388183681443, guid: d9ac4e5b836976c44afc5e83200b56dd, type: 3}
-  - {fileID: 8926706609165791245, guid: ba15b813c8bdf664a9eba3790327c99b, type: 3}
-  - {fileID: 4049427147046645786, guid: 9ac260d56084ae64eb19415f5d44055b, type: 3}
-  - {fileID: 854065751570155603, guid: 0a46c1f8d42795b47836fc65cfdaa089, type: 3}
+  BloodSplatSprites:
+  - {fileID: 21300000, guid: fc40f79b1a1037b42a264708360d542e, type: 3}
+  - {fileID: 21300000, guid: 807d5cc48cc998041b1ddfcdb3d2e573, type: 3}
+  - {fileID: 21300000, guid: 3ae12a82b9e79624bb55816fbbe0902b, type: 3}
+  - {fileID: 21300000, guid: b1877c00ff27b7d4d87cfb35e4c4c9b5, type: 3}
+  BloodSplatMaterials:
+  - {fileID: 2100000, guid: a29ebbed09878ff4c848304076a8cdd3, type: 2}
+  - {fileID: 2100000, guid: 9f38b848666a1f84ca1114f033314a8e, type: 2}
+  - {fileID: 2100000, guid: 4e2148e97774f7f459c212f401de5da6, type: 2}
+  - {fileID: 2100000, guid: f0dbfb8b4dfdb6d4dab16f0995d07f7b, type: 2}
   SmallBloodSplat: {fileID: 1884396171211911543, guid: f477811a195928f41ae995596d9d8686,
     type: 3}
+  DecalProjector: {fileID: 9003598403829109312, guid: 59eeda59d4204ae4a82eea18d77c5572,
+    type: 3}
+  DecalLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
