@@ -17,7 +17,7 @@ public class InstantiateBloodSplat : MonoBehaviour
     private void SpawnBloodSplat(Vector3 point)
     {
         Instantiate(_bloodSplat, point, _bloodSplat.transform.rotation);
-        Instantiate(SmallBloodSplat, transform.position, SmallBloodSplat.transform.rotation);
+        Instantiate(SmallBloodSplat, new Vector3(transform.position.x, 0.51f, transform.position.z), SmallBloodSplat.transform.rotation);
         Destroy(gameObject);
     }
 
