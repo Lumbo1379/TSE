@@ -19,19 +19,13 @@ public class IKControl : MonoBehaviour
     {
         if (_animator)
         {
-
-            //if the IK is active, set the position and rotation directly to the goal. 
             if (IKActive)
             {
-
-                // Set the look target position, if one has been assigned
                 if (LookObject != null)
                 {
                     _animator.SetLookAtWeight(1);
                     _animator.SetLookAtPosition(LookObject.position);
                 }
-
-                // Set the right hand target position and rotation, if one has been assigned
                 if (RightHand != null)
                 {
                     _animator.SetIKPositionWeight(AvatarIKGoal.RightHand, 0.25f);
@@ -41,8 +35,6 @@ public class IKControl : MonoBehaviour
                 }
 
             }
-
-            //if the IK is not active, set the position and rotation of the hand and head back to the original position
             else
             {
                 _animator.SetIKPositionWeight(AvatarIKGoal.RightHand, 0);
