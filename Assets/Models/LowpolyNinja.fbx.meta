@@ -9,6 +9,15 @@ ModelImporter:
   - first:
       74: 848275916351574793
     second: PlayerSuckLifeforce
+  - first:
+      74: 7621144532205204457
+    second: root|SuckOxygen
+  - first:
+      74: -8206924601246614787
+    second: root|CheckOxygen
+  - first:
+      74: -3939842568109392834
+    second: root|Default
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -34,15 +43,17 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: "\nClip 'root|rootAction.001' has import animation warnings
+    animationImportWarnings: "\nClip 'root|SuckOxygen' has import animation warnings
       that might lower retargeting quality:\n\t'c_pinky1.r' has translation animation
       that will be discarded.\n\t'c_ring1.r' has translation animation that will be
       discarded.\n\t'c_middle1.r' has translation animation that will be discarded.\n\t'c_index1.r'
       has translation animation that will be discarded.\n"
-    animationRetargetingWarnings: "\nRetargeting quality report for clip 'root|rootAction':\n\tRetargeting
+    animationRetargetingWarnings: "\nRetargeting quality report for clip 'root|CheckOxygen':\n\tLeftHand
+      average position error 9.9 mm and maximum position error 29.1 mm at time 1:
+      6 (100.0%) Frame 30\n\nRetargeting quality report for clip 'root|Default':\n\tRetargeting
       quality is good. No significant differences with original animation were found.\n\nRetargeting
-      quality report for clip 'root|rootAction.001':\n\tRightHand average position
-      error 5.9 mm and maximum position error 8.0 mm at time 9: 5 (97.8%) Frame 221\n"
+      quality report for clip 'root|SuckOxygen':\n\tRightHand average position error
+      5.9 mm and maximum position error 8.0 mm at time 9: 5 (97.8%) Frame 221\n"
     animationDoRetargetingWarnings: 1
     importAnimatedCustomProperties: 0
     importConstraints: 0
@@ -55,11 +66,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: PlayerSuckLifeforce
-      takeName: root|rootAction.001
+      name: root|SuckOxygen
+      takeName: root|SuckOxygen
       internalID: 0
       firstFrame: 0
-      lastFrame: 128
+      lastFrame: 191
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -79,7 +90,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 1
+      - time: 0.79973996
         functionName: BlowUpAnimalEvent
         data: 
         objectReferenceParameter: {instanceID: 0}
@@ -91,11 +102,40 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Default
-      takeName: root|rootAction
+      name: root|Default
+      takeName: root|Default
       internalID: 0
       firstFrame: 0
       lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: root|CheckOxygen
+      takeName: root|CheckOxygen
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 30
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
