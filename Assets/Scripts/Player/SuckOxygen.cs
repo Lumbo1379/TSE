@@ -12,16 +12,19 @@ public class SuckOxygen : MonoBehaviour
     [Range(0, 5)] public float EffectDelay;
     public GameObject BloodExplosionEffect;
     public GameObject DeathBloodSplat;
+    [Range(0, 100)] public int OxygenGain;
 
     private GameObject _currentSelection;
     private Animator _playerAnimator;
     private IKControl _iKControl;
+    private OxygenMeter _oxygenMeter;
 
     private void Start()
     {
         _currentSelection = null;
         _playerAnimator = GetComponent<Animator>();
         _iKControl = GetComponent<IKControl>();
+        _oxygenMeter = GetComponent<OxygenMeter>();
     }
 
     private void Update()
@@ -115,5 +118,7 @@ public class SuckOxygen : MonoBehaviour
         EffectOrigin.transform.parent = transform;
         Destroy(_currentSelection.transform.parent.gameObject);
         DeselectObject(false);
+
+        _oxygenMeter.UpdateMeterOnSuccessfulSuck(OxygenGain);
     }
 }
