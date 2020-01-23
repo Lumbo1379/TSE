@@ -1,4 +1,5 @@
-# TSEDownload this for easy use: https://desktop.github.com/
+# TSE
+#Download this for easy use: https://desktop.github.com/
  
 First time when it is imported you'll get some errors pop up, just clear them and open Main in the scenes folder and it'll all work fine
 
