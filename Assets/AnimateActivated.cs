@@ -16,7 +16,6 @@ public class AnimateActivated : MonoBehaviour
     {
         _isActive = false;
         LightMaterial.SetColor("_EmissionColor", StartColour);
-        SetActive();
     }
 
     private void Update()
