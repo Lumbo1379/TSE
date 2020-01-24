@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class OxygenMeter : MonoBehaviour
 {
-    public int Oxygen { get; set; }
-
     public Transform Meter;
     [Range(0, 60)] public float OxygenTick;
+    public GameObject DeathPanelUI;
 
     private Animator _animator;
+    private int _oxygen;
 
     private void Start()
     {
         _animator = GetComponent<Animator>();
-        Oxygen = 100;
+        _oxygen = 100;
 
         InvokeRepeating("DepleteOxygen", OxygenTick, OxygenTick);
     }
@@ -25,19 +25,30 @@ public class OxygenMeter : MonoBehaviour
             _animator.SetBool("isChecking", true);
         else if (Input.GetKeyUp(KeyCode.Tab))
             _animator.SetBool("isChecking", false);
+
+        if (_oxygen < 0)
+        {
+            CancelInvoke("DepleteOxygen");
+            PlayerDead();
+        }
     }
 
     private void DepleteOxygen()
     {
-        Oxygen--;
+        _oxygen--;
         Meter.localScale = new Vector3(Meter.localScale.x - 0.01f, Meter.localScale.y, Meter.localScale.z);
     }
 
     public void UpdateMeterOnSuccessfulSuck(int increase)
     {
-        Oxygen += increase;
-        Oxygen = Mathf.Clamp(Oxygen, 0, 100);
+        _oxygen += increase;
+        _oxygen = Mathf.Clamp(_oxygen, 0, 100);
 
-        Meter.localScale = new Vector3(Oxygen / 100f, Meter.localScale.y, Meter.localScale.z);
+        Meter.localScale = new Vector3(_oxygen / 100f, Meter.localScale.y, Meter.localScale.z);
+    }
+
+    private void PlayerDead()
+    {
+
     }
 }
