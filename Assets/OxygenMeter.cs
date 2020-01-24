@@ -49,6 +49,6 @@ public class OxygenMeter : MonoBehaviour
 
     private void PlayerDead()
     {
-
+        DeathPanelUI.SetActive(true);
     }
 }
