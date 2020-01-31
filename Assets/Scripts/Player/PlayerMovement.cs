@@ -8,8 +8,10 @@ public class PlayerMovement : MonoBehaviour
     [Range(-50, 0)] public float Gravity;
     [Range(0, 1)] public float GroundDistance;
     [Range(0, 10)] public float JumpHeight;
+    [Range(0, 25)] public float SpeedIncrease;
     public LayerMask GroundMask;
     public Transform GroundCheck;
+    
 
     private CharacterController _controller;
     private Vector3 _velocity;
@@ -42,5 +44,14 @@ public class PlayerMovement : MonoBehaviour
         _velocity.y += Gravity * Time.deltaTime; // Need to add our own gravity as can't use rgbd with character controller
 
         _controller.Move(_velocity * Time.deltaTime);
+
+        if(Input.GetKeyDown(KeyCode.LeftShift) && _isGrounded)
+        {
+            Speed += SpeedIncrease;
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftShift)&& _isGrounded)
+        {
+            Speed -= SpeedIncrease;
+        }
     }
 }
