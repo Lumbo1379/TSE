@@ -46,12 +46,8 @@ public class PlayerMovement : MonoBehaviour
         _controller.Move(_velocity * Time.deltaTime);
 
         if(Input.GetKeyDown(KeyCode.LeftShift) && _isGrounded)
-        {
             Speed += SpeedIncrease;
-        }
         else if (Input.GetKeyUp(KeyCode.LeftShift)&& _isGrounded)
-        {
             Speed -= SpeedIncrease;
-        }
     }
 }
