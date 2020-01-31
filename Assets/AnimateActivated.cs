@@ -12,10 +12,12 @@ public class AnimateActivated : MonoBehaviour
     private float _startTime;
     private bool _isActive;
     private Color _currentColour;
+    private AttractCloseObjects _attractObjects;
 
     private void Start()
     {
         _isActive = false;
+        _attractObjects = GetComponent<AttractCloseObjects>();
         LightMaterial.SetColor("_EmissionColor", StartColour);
     }
 
@@ -37,6 +39,7 @@ public class AnimateActivated : MonoBehaviour
     {
         _isActive = true;
         _startTime = Time.time;
+        _attractObjects.OnActiveDisableAttract();
     }
 
     private void SetInactive()
@@ -44,17 +47,18 @@ public class AnimateActivated : MonoBehaviour
         _isActive = false;
         _startTime = Time.time;
         _currentColour = LightMaterial.GetColor("_EmissionColor");
+        _attractObjects.OnLeaveEnableAttract();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Moveable"))
+        if (other.CompareTag("Moveable") && !_isActive)
             SetActive();
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Moveable"))
+        if (other.CompareTag("Moveable") && _isActive)
             SetInactive();
     }
 }

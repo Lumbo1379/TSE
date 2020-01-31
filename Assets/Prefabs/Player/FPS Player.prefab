@@ -11458,6 +11458,7 @@ GameObject:
   - component: {fileID: 947470756394217360}
   - component: {fileID: 385330748}
   - component: {fileID: 1545022156}
+  - component: {fileID: 657536400}
   m_Layer: 0
   m_Name: FPS Player
   m_TagString: Untagged
@@ -11515,7 +11516,7 @@ CharacterController:
   serializedVersion: 2
   m_Height: 1.7
   m_Radius: 0.17
-  m_SlopeLimit: 45
+  m_SlopeLimit: 60
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
@@ -11536,6 +11537,7 @@ MonoBehaviour:
   Gravity: -20
   GroundDistance: 0.4
   JumpHeight: 3
+  SpeedIncrease: 7.5
   GroundMask:
     serializedVersion: 2
     m_Bits: 256
@@ -11591,6 +11593,21 @@ MonoBehaviour:
   Meter: {fileID: 1275941981737692650}
   OxygenTick: 30
   DeathPanelUI: {fileID: 0}
+--- !u!114 &657536400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9185322515526018602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffbffec8135b8bf43bad58690988307e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Thrust: 2
+  Range: 50
+  Camera: {fileID: 8241241568971484658}
 --- !u!1001 &8241241569209351693
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11971,15 +11988,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f64bf1fe70edc9245a8a29ca88f52b2f, type: 3}
---- !u!4 &8237644605339781461 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 438494163379752317, guid: f64bf1fe70edc9245a8a29ca88f52b2f,
-    type: 3}
-  m_PrefabInstance: {fileID: 8377862996502103080}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8240369264608708013 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 441223219625148805, guid: f64bf1fe70edc9245a8a29ca88f52b2f,
+    type: 3}
+  m_PrefabInstance: {fileID: 8377862996502103080}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8237644605339781461 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 438494163379752317, guid: f64bf1fe70edc9245a8a29ca88f52b2f,
     type: 3}
   m_PrefabInstance: {fileID: 8377862996502103080}
   m_PrefabAsset: {fileID: 0}

@@ -286,12 +286,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!20 &560291449 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 8241241568971484658, guid: 867e0adc2c101434791423b4ae5ac443,
-    type: 3}
-  m_PrefabInstance: {fileID: 8241241570949581221}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &614429736
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,27 +352,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &657536392 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9185322515526018602, guid: 867e0adc2c101434791423b4ae5ac443,
-    type: 3}
-  m_PrefabInstance: {fileID: 8241241570949581221}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &657536400
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 657536392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffbffec8135b8bf43bad58690988307e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Thrust: 2
-  Range: 50
-  Camera: {fileID: 560291449}
 --- !u!1001 &689453409
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1136,7 +1109,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.006061274
   m_Center: {x: -9.313225e-10, y: -0.0000000013969835, z: 0.0046912674}
---- !u!64 &8296172667892545067
+--- !u!64 &8296172667892545064
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1147,9 +1120,26 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4711208715938537054, guid: 3c4da7cb614a7c54aad6ab759b723852, type: 3}
+--- !u!114 &8296172667892545068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8296172667892545061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2df0d35a08112a34389ad6649c679a14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PullForce: 25000
+  PullRadius: 5
+  ForceReducation: 10000
+  ConstantAttract: 0
+  DisableAttractDelay: 1
 --- !u!1001 &8532841413018921360
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1161,6 +1151,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pressure Pad
+      objectReference: {fileID: 0}
+    - target: {fileID: 381489957106491317, guid: 3b59ba0cd5f135a47bddb96abc7450c8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3679452718216310182, guid: 3b59ba0cd5f135a47bddb96abc7450c8,
         type: 3}
