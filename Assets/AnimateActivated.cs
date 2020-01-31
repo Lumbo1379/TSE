@@ -11,6 +11,7 @@ public class AnimateActivated : MonoBehaviour
 
     private float _startTime;
     private bool _isActive;
+    private Color _currentColour;
 
     private void Start()
     {
@@ -25,11 +26,35 @@ public class AnimateActivated : MonoBehaviour
             float time = (Time.time - _startTime) * Speed;
             LightMaterial.SetColor("_EmissionColor", Color.Lerp(StartColour, EndColour, time));
         }
+        else
+        {
+            float time = (Time.time - _startTime) * Speed;
+            LightMaterial.SetColor("_EmissionColor", Color.Lerp(_currentColour, StartColour, time));
+        }
     }
 
-    public void SetActive()
+    private void SetActive()
     {
         _isActive = true;
         _startTime = Time.time;
+    }
+
+    private void SetInactive()
+    {
+        _isActive = false;
+        _startTime = Time.time;
+        _currentColour = LightMaterial.GetColor("_EmissionColor");
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Moveable"))
+            SetActive();
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Moveable"))
+            SetInactive();
     }
 }
