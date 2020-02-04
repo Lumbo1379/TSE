@@ -57,6 +57,19 @@ public class SuckOxygen : MonoBehaviour
     {
         if (collision.gameObject != _currentSelection)
         {
+            if (collision.CompareTag("OSourceLink"))
+            {
+                var rabbit = collision.GetComponent<OSourceLink>().Rabbit;
+
+                if (rabbit != null)
+                    collision = rabbit.transform;
+                else
+                {
+                    collision.gameObject.layer = 0;
+                    return;
+                }
+            }
+
             Invoke("ShowEffect", EffectDelay);
 
             if (_currentSelection != null)

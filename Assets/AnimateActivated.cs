@@ -13,6 +13,7 @@ public class AnimateActivated : MonoBehaviour
     private bool _isActive;
     private Color _currentColour;
     private AttractCloseObjects _attractObjects;
+    private int _activatedObjectInstanceID;
 
     private void Start()
     {
@@ -37,7 +38,7 @@ public class AnimateActivated : MonoBehaviour
 
     private void SetActive()
     {
-        _isActive = true;
+    _isActive = true;
         _startTime = Time.time;
         _attractObjects.OnActiveDisableAttract();
     }
@@ -53,12 +54,15 @@ public class AnimateActivated : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Moveable") && !_isActive)
+        {
+            _activatedObjectInstanceID = other.gameObject.GetInstanceID();
             SetActive();
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Moveable") && _isActive)
+        if (other.CompareTag("Moveable") && _isActive && other.gameObject.GetInstanceID() == _activatedObjectInstanceID)
             SetInactive();
     }
 }
