@@ -5,45 +5,39 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
-    public static bool GamePaused = false;
+    public static bool GamePaused;
     //allows reference from other scripts
 
-    public GameObject pauseMenu;
+    public GameObject PauseMenuUI;
 
-    
-
-   
-
+    private void Start()
+    {
+        GamePaused = false;
+    }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown("p"))
         {
             if (GamePaused)
-            {
-                //resume game as pause has already been pressed - therefore already in pause screen
-                Resume();
-            }
+                Resume(); //resume game as pause has already been pressed - therefore already in pause screen
             else
-            {
-                //game not already paused so needs to now pause as player input dictates
-                Pause();
-            }
+                Pause(); //game not already paused so needs to now pause as player input dictates
         }
     }
 
     //public void so can be triggered from the button itself
     public void Resume()
     {
-        pauseMenu.SetActive(false);
+        PauseMenuUI.SetActive(false);
         Time.timeScale = 1f; //sets game time to normal rate
         GamePaused = false;
     }
 
-    void Pause()
+    private void Pause()
     {
-        pauseMenu.SetActive(true);
+        PauseMenuUI.SetActive(true);
         //ensures mouse cursor is seen when navigating the menu       
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
