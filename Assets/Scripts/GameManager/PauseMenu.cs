@@ -53,6 +53,7 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadMenu()
     {
+        //uses scene builder to load menu as it is before the main scene in build settings
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1); ;
     }
 
