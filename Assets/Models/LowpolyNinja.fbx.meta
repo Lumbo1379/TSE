@@ -18,6 +18,9 @@ ModelImporter:
   - first:
       74: -3939842568109392834
     second: root|Default
+  - first:
+      74: 625100057293190364
+    second: root|GravityForce
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -43,7 +46,13 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: "\nClip 'root|SuckOxygen' has import animation warnings
+    animationImportWarnings: "\nClip 'root|GravityForce' has import animation warnings
+      that might lower retargeting quality:\n\t'c_pinky1.r' has translation animation
+      that will be discarded.\n\t'c_pinky2.r' has translation animation that will
+      be discarded.\n\t'c_pinky3.r' has translation animation that will be discarded.\n\t'c_ring1.r'
+      has translation animation that will be discarded.\n\t'c_middle1.r' has translation
+      animation that will be discarded.\n\t'c_index1.r' has translation animation
+      that will be discarded.\n\nClip 'root|SuckOxygen' has import animation warnings
       that might lower retargeting quality:\n\t'c_pinky1.r' has translation animation
       that will be discarded.\n\t'c_ring1.r' has translation animation that will be
       discarded.\n\t'c_middle1.r' has translation animation that will be discarded.\n\t'c_index1.r'
@@ -52,6 +61,10 @@ ModelImporter:
       average position error 9.9 mm and maximum position error 29.1 mm at time 1:
       6 (100.0%) Frame 30\n\nRetargeting quality report for clip 'root|Default':\n\tRetargeting
       quality is good. No significant differences with original animation were found.\n\nRetargeting
+      quality report for clip 'root|Gravity Force':\n\tRetargeting quality is good.
+      No significant differences with original animation were found.\n\nRetargeting
+      quality report for clip 'root|GravityForce':\n\tRightHand average position error
+      0.9 mm and maximum position error 2.1 mm at time 9:10 (100.0%) Frame 226\n\nRetargeting
       quality report for clip 'root|SuckOxygen':\n\tRightHand average position error
       5.9 mm and maximum position error 8.0 mm at time 9: 5 (97.8%) Frame 221\n"
     animationDoRetargetingWarnings: 1
@@ -136,6 +149,35 @@ ModelImporter:
       internalID: 0
       firstFrame: 0
       lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: root|GravityForce
+      takeName: root|GravityForce
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 226
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
