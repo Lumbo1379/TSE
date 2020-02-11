@@ -6,12 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
+    private void Start()
+    {
+        FindObjectOfType<AudioManager>().PlayAudio("Menu");
+    }
 
     public void PlayGame()
     {
         //The next scene loaded is the next item in sequence so the game is played in order
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        
     }
 
     public void QuitGame()
