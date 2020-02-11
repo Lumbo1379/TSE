@@ -14,14 +14,13 @@ public class AudioManager : MonoBehaviour
             s.src = gameObject.AddComponent<AudioSource>();
             s.src.clip = s.clip;
             s.src.loop = s.loop;
+
+            //volume control
+            s.src.volume = s.volume;
         }
     }
 
-    private void Start()
-    {
-        PlayAudio("MainTheme");
-    }
-
+    
     public void PlayAudio(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);

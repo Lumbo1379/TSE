@@ -12,6 +12,7 @@ public class PauseMenu : MonoBehaviour
 
     private void Start()
     {
+        FindObjectOfType<AudioManager>().PlayAudio("MainTheme");
         GamePaused = false;
     }
 
