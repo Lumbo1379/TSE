@@ -53,6 +53,7 @@ public class AttractCloseObjects : MonoBehaviour
 
     public void OnLeaveEnableAttract()
     {
+        CancelInvoke("DisableAttract");
         _attract = true;
         _runningForce = PullForce;
     }
