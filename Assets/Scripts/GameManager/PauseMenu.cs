@@ -30,6 +30,7 @@ public class PauseMenu : MonoBehaviour
     //public void so can be triggered from the button itself
     public void Resume()
     {
+        
         PauseMenuUI.SetActive(false);
         Time.timeScale = 1f; //sets game time to normal rate
         GamePaused = false;
