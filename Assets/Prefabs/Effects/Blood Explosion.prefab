@@ -89,7 +89,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: f0dbfb8b4dfdb6d4dab16f0995d07f7b, type: 2}
   SmallBloodSplat: {fileID: 1884396171211911543, guid: f477811a195928f41ae995596d9d8686,
     type: 3}
-  DecalProjector: {fileID: 9003598403829109312, guid: 59eeda59d4204ae4a82eea18d77c5572,
+  DecalProjector: {fileID: 2762747731098974999, guid: 5b6616bf0a1640747b72554e65a4c599,
     type: 3}
   DecalLayerMask:
     serializedVersion: 2
@@ -183,7 +183,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: f0dbfb8b4dfdb6d4dab16f0995d07f7b, type: 2}
   SmallBloodSplat: {fileID: 1884396171211911543, guid: f477811a195928f41ae995596d9d8686,
     type: 3}
-  DecalProjector: {fileID: 9003598403829109312, guid: 59eeda59d4204ae4a82eea18d77c5572,
+  DecalProjector: {fileID: 2762747731098974999, guid: 5b6616bf0a1640747b72554e65a4c599,
     type: 3}
   DecalLayerMask:
     serializedVersion: 2
@@ -277,7 +277,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: f0dbfb8b4dfdb6d4dab16f0995d07f7b, type: 2}
   SmallBloodSplat: {fileID: 1884396171211911543, guid: f477811a195928f41ae995596d9d8686,
     type: 3}
-  DecalProjector: {fileID: 9003598403829109312, guid: 59eeda59d4204ae4a82eea18d77c5572,
+  DecalProjector: {fileID: 2762747731098974999, guid: 5b6616bf0a1640747b72554e65a4c599,
     type: 3}
   DecalLayerMask:
     serializedVersion: 2
@@ -371,7 +371,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: f0dbfb8b4dfdb6d4dab16f0995d07f7b, type: 2}
   SmallBloodSplat: {fileID: 1884396171211911543, guid: f477811a195928f41ae995596d9d8686,
     type: 3}
-  DecalProjector: {fileID: 9003598403829109312, guid: 59eeda59d4204ae4a82eea18d77c5572,
+  DecalProjector: {fileID: 2762747731098974999, guid: 5b6616bf0a1640747b72554e65a4c599,
     type: 3}
   DecalLayerMask:
     serializedVersion: 2
@@ -465,7 +465,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: f0dbfb8b4dfdb6d4dab16f0995d07f7b, type: 2}
   SmallBloodSplat: {fileID: 1884396171211911543, guid: f477811a195928f41ae995596d9d8686,
     type: 3}
-  DecalProjector: {fileID: 9003598403829109312, guid: 59eeda59d4204ae4a82eea18d77c5572,
+  DecalProjector: {fileID: 2762747731098974999, guid: 5b6616bf0a1640747b72554e65a4c599,
     type: 3}
   DecalLayerMask:
     serializedVersion: 2
@@ -1322,7 +1322,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: f0dbfb8b4dfdb6d4dab16f0995d07f7b, type: 2}
   SmallBloodSplat: {fileID: 1884396171211911543, guid: f477811a195928f41ae995596d9d8686,
     type: 3}
-  DecalProjector: {fileID: 9003598403829109312, guid: 59eeda59d4204ae4a82eea18d77c5572,
+  DecalProjector: {fileID: 2762747731098974999, guid: 5b6616bf0a1640747b72554e65a4c599,
     type: 3}
   DecalLayerMask:
     serializedVersion: 2
@@ -1577,7 +1577,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: f0dbfb8b4dfdb6d4dab16f0995d07f7b, type: 2}
   SmallBloodSplat: {fileID: 1884396171211911543, guid: f477811a195928f41ae995596d9d8686,
     type: 3}
-  DecalProjector: {fileID: 9003598403829109312, guid: 59eeda59d4204ae4a82eea18d77c5572,
+  DecalProjector: {fileID: 2762747731098974999, guid: 5b6616bf0a1640747b72554e65a4c599,
     type: 3}
   DecalLayerMask:
     serializedVersion: 2
@@ -1671,7 +1671,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: f0dbfb8b4dfdb6d4dab16f0995d07f7b, type: 2}
   SmallBloodSplat: {fileID: 1884396171211911543, guid: f477811a195928f41ae995596d9d8686,
     type: 3}
-  DecalProjector: {fileID: 9003598403829109312, guid: 59eeda59d4204ae4a82eea18d77c5572,
+  DecalProjector: {fileID: 2762747731098974999, guid: 5b6616bf0a1640747b72554e65a4c599,
     type: 3}
   DecalLayerMask:
     serializedVersion: 2
