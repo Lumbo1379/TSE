@@ -16,12 +16,14 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController _controller;
     private Vector3 _velocity;
     private bool _isGrounded;
+    private float _startSpeed;
 
     private void Start()
     {
         _controller = GetComponent<CharacterController>();
         _velocity = new Vector3();
         _isGrounded = true;
+        _startSpeed = Speed;
     }
 
     private void Update()
@@ -47,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.LeftShift) && _isGrounded)
             Speed += SpeedIncrease;
-        else if (Input.GetKeyUp(KeyCode.LeftShift)&& _isGrounded)
+        else if (Input.GetKeyUp(KeyCode.LeftShift) && Speed > _startSpeed)
             Speed -= SpeedIncrease;
     }
 }

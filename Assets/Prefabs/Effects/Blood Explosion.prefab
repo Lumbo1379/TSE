@@ -93,7 +93,7 @@ MonoBehaviour:
     type: 3}
   DecalLayerMask:
     serializedVersion: 2
-    m_Bits: 257
+    m_Bits: 256
 --- !u!1 &7494376507595931108
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,7 +187,7 @@ MonoBehaviour:
     type: 3}
   DecalLayerMask:
     serializedVersion: 2
-    m_Bits: 257
+    m_Bits: 256
 --- !u!1 &7494376507608219716
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,7 +281,7 @@ MonoBehaviour:
     type: 3}
   DecalLayerMask:
     serializedVersion: 2
-    m_Bits: 257
+    m_Bits: 256
 --- !u!1 &7494376507610474020
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,7 +375,7 @@ MonoBehaviour:
     type: 3}
   DecalLayerMask:
     serializedVersion: 2
-    m_Bits: 257
+    m_Bits: 256
 --- !u!1 &7494376507719741843
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,7 +469,7 @@ MonoBehaviour:
     type: 3}
   DecalLayerMask:
     serializedVersion: 2
-    m_Bits: 257
+    m_Bits: 256
 --- !u!1 &7494376507759564927
 GameObject:
   m_ObjectHideFlags: 0
@@ -1326,7 +1326,7 @@ MonoBehaviour:
     type: 3}
   DecalLayerMask:
     serializedVersion: 2
-    m_Bits: 257
+    m_Bits: 256
 --- !u!1 &7494376509262154493
 GameObject:
   m_ObjectHideFlags: 0
@@ -1581,7 +1581,7 @@ MonoBehaviour:
     type: 3}
   DecalLayerMask:
     serializedVersion: 2
-    m_Bits: 257
+    m_Bits: 256
 --- !u!1 &7494376509521362686
 GameObject:
   m_ObjectHideFlags: 0
@@ -1675,4 +1675,4 @@ MonoBehaviour:
     type: 3}
   DecalLayerMask:
     serializedVersion: 2
-    m_Bits: 257
+    m_Bits: 256
