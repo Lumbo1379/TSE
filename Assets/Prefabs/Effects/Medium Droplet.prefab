@@ -186,8 +186,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31b9ebd29c912a04183fb8931c572323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BloodSplats:
-  - {fileID: 3763499388183681443, guid: d9ac4e5b836976c44afc5e83200b56dd, type: 3}
-  - {fileID: 8926706609165791245, guid: ba15b813c8bdf664a9eba3790327c99b, type: 3}
-  - {fileID: 4049427147046645786, guid: 9ac260d56084ae64eb19415f5d44055b, type: 3}
-  - {fileID: 854065751570155603, guid: 0a46c1f8d42795b47836fc65cfdaa089, type: 3}
+  BloodSplatSprites: []
+  BloodSplatMaterials: []
+  SmallBloodSplat: {fileID: 0}
+  DecalProjector: {fileID: 0}
+  DecalLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
