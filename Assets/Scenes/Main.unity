@@ -1636,6 +1636,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 155584671}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &167211649 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8756052475693950361, guid: d0703b26b0e9f16479dc8ad0398f9bca,
+    type: 3}
+  m_PrefabInstance: {fileID: 1647455455}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &167211653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167211649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b2c3da37b9cc5e4aa1f45422fb37c43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HologramMaterial: {fileID: 2100000, guid: c232a76908c40c948987609cce817f8c, type: 2}
+  FadeInSpeed: 0.005
 --- !u!1001 &168141947
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8873,6 +8893,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4719816786465777845, guid: 3b59ba0cd5f135a47bddb96abc7450c8,
+        type: 3}
+      propertyPath: LightMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 8666e7369429d8e40ada303c52f5aff3, type: 2}
     - target: {fileID: 381489957106491317, guid: 3b59ba0cd5f135a47bddb96abc7450c8,
         type: 3}
       propertyPath: m_Name
@@ -13831,7 +13856,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 53667683bcde11b49ab2299e76b0ddd9, type: 2}
+      objectReference: {fileID: 2100000, guid: c232a76908c40c948987609cce817f8c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0703b26b0e9f16479dc8ad0398f9bca, type: 3}
 --- !u!1001 &1651989105
@@ -16659,72 +16684,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 867e0adc2c101434791423b4ae5ac443, type: 3}
---- !u!1 &8296172667892545061 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 381489957106491317, guid: 3b59ba0cd5f135a47bddb96abc7450c8,
-    type: 3}
-  m_PrefabInstance: {fileID: 8532841413018921360}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8296172667892545062
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8296172667892545061}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7e6320536c1abc4499bf20e3dc1fda8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 0.3
-  StartColour: {r: 0, g: 0, b: 0, a: 1}
-  EndColour: {r: 1, g: 0.13679248, b: 0.5700888, a: 1}
-  LightMaterial: {fileID: 2100000, guid: 8e06c71587ffa4d4ba7255ecd1b1914c, type: 2}
---- !u!135 &8296172667892545063
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8296172667892545061}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.006061274
-  m_Center: {x: -9.313225e-10, y: -0.0000000013969835, z: 0.0046912674}
---- !u!64 &8296172667892545064
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8296172667892545061}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4711208715938537054, guid: 3c4da7cb614a7c54aad6ab759b723852, type: 3}
---- !u!114 &8296172667892545068
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8296172667892545061}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2df0d35a08112a34389ad6649c679a14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PullForce: 25000
-  PullRadius: 5
-  ForceReducation: 10000
-  ConstantAttract: 0
-  DisableAttractDelay: 1
 --- !u!1001 &8532841413018921360
 PrefabInstance:
   m_ObjectHideFlags: 0

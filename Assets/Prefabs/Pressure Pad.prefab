@@ -11,8 +11,12 @@ GameObject:
   - component: {fileID: 3679452718216310182}
   - component: {fileID: 5641616700965115792}
   - component: {fileID: 2123312074420661097}
+  - component: {fileID: 3134987829971912702}
+  - component: {fileID: 4719816786465777845}
+  - component: {fileID: 3286417276732734046}
+  - component: {fileID: 6571630492550250109}
   m_Layer: 0
-  m_Name: PressurePad
+  m_Name: Pressure Pad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,3 +83,63 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &3134987829971912702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381489957106491317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2df0d35a08112a34389ad6649c679a14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PullForce: 25000
+  PullRadius: 5
+  ForceReducation: 10000
+  ConstantAttract: 0
+  DisableAttractDelay: 1
+--- !u!114 &4719816786465777845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381489957106491317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7e6320536c1abc4499bf20e3dc1fda8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 0.3
+  StartColour: {r: 0, g: 0, b: 0, a: 1}
+  EndColour: {r: 1, g: 0.13679248, b: 0.5700888, a: 1}
+  LightMaterial: {fileID: 2100000, guid: 8e06c71587ffa4d4ba7255ecd1b1914c, type: 2}
+--- !u!64 &3286417276732734046
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381489957106491317}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4711208715938537054, guid: 3c4da7cb614a7c54aad6ab759b723852, type: 3}
+--- !u!135 &6571630492550250109
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381489957106491317}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.006061274
+  m_Center: {x: -9.313225e-10, y: -0.0000000013969835, z: 0.0046912674}
