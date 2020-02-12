@@ -19,7 +19,7 @@ public class AnimateActivated : MonoBehaviour
     {
         _isActive = false;
         _attractObjects = GetComponent<AttractCloseObjects>();
-        LightMaterial.SetColor("_EmissionColor", StartColour);
+        LightMaterial.SetColor("_EmissiveColor", StartColour);
     }
 
     private void Update()
@@ -27,12 +27,12 @@ public class AnimateActivated : MonoBehaviour
         if (_isActive)
         {
             float time = (Time.time - _startTime) * Speed;
-            LightMaterial.SetColor("_EmissionColor", Color.Lerp(StartColour, EndColour, time));
+            LightMaterial.SetColor("_EmissiveColor", Color.Lerp(StartColour, EndColour, time));
         }
         else
         {
             float time = (Time.time - _startTime) * Speed;
-            LightMaterial.SetColor("_EmissionColor", Color.Lerp(_currentColour, StartColour, time));
+            LightMaterial.SetColor("_EmissiveColor", Color.Lerp(_currentColour, StartColour, time));
         }
     }
 
@@ -47,7 +47,7 @@ public class AnimateActivated : MonoBehaviour
     {
         _isActive = false;
         _startTime = Time.time;
-        _currentColour = LightMaterial.GetColor("_EmissionColor");
+        _currentColour = LightMaterial.GetColor("_EmissiveColor");
         _attractObjects.OnLeaveEnableAttract();
     }
 
