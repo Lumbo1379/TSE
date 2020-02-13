@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3635664817921733689}
   - component: {fileID: 5656889641536077132}
   - component: {fileID: 4644035735908004910}
+  - component: {fileID: 4661866676639865048}
   m_Layer: 0
   m_Name: four
   m_TagString: Untagged
@@ -26,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8756052475693950361}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.2609138, y: 0, z: 0}
-  m_LocalScale: {x: 500, y: 500, z: 500}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 600, y: 600, z: 600}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -57,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: d434996cb3ab0bf47acccf67f5d8916a, type: 3}
+  - {fileID: 2100000, guid: c232a76908c40c948987609cce817f8c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -78,3 +79,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &4661866676639865048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8756052475693950361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b2c3da37b9cc5e4aa1f45422fb37c43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HologramMaterial: {fileID: 2100000, guid: c232a76908c40c948987609cce817f8c, type: 2}
+  FadeInSpeed: 0.005

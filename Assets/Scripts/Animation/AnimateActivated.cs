@@ -8,17 +8,21 @@ public class AnimateActivated : MonoBehaviour
     [ColorUsage(true, true)] public Color StartColour;
     [ColorUsage(true, true)] public Color EndColour;
     public Material LightMaterial;
+    public GameObject CodeNumber;
+    public Vector3 CodeNumberOffset;
 
     private float _startTime;
     private bool _isActive;
     private Color _currentColour;
     private AttractCloseObjects _attractObjects;
     private int _activatedObjectInstanceID;
+    private bool _codeRevealed;
 
     private void Start()
     {
         _isActive = false;
         _attractObjects = GetComponent<AttractCloseObjects>();
+        _codeRevealed = false;
         LightMaterial.SetColor("_EmissiveColor", StartColour);
     }
 
@@ -28,6 +32,12 @@ public class AnimateActivated : MonoBehaviour
         {
             float time = (Time.time - _startTime) * Speed;
             LightMaterial.SetColor("_EmissiveColor", Color.Lerp(StartColour, EndColour, time));
+
+            if (LightMaterial.GetColor("_EmissiveColor") == EndColour && !_codeRevealed)
+            {
+                _codeRevealed = true;
+                ShowCodeNumber();
+            }
         }
         else
         {
@@ -64,5 +74,12 @@ public class AnimateActivated : MonoBehaviour
     {
         if (other.CompareTag("Moveable") && _isActive && other.gameObject.GetInstanceID() == _activatedObjectInstanceID)
             SetInactive();
+    }
+
+    private void ShowCodeNumber()
+    {
+        var codeNumber = Instantiate(CodeNumber, transform.position, CodeNumber.transform.rotation);
+        codeNumber.transform.position += CodeNumberOffset;
+        codeNumber.GetComponent<HologramFadeIn>().enabled = true;
     }
 }
