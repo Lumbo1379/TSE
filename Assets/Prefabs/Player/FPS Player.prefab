@@ -11575,7 +11575,7 @@ MonoBehaviour:
   OSuckRange: 100
   LifeForceSuckEffect: {fileID: 8239513572866370997}
   EffectOrigin: {fileID: 8240369264608708013}
-  EffectDelay: 2
+  EffectDelay: 0
   BloodExplosionEffect: {fileID: 7494376509268726807, guid: adc581f3744ec9346982e77d9d497f23,
     type: 3}
   DeathBloodSplat: {fileID: 0}
