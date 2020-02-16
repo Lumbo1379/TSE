@@ -11454,6 +11454,7 @@ GameObject:
   - component: {fileID: 5270209858753631289}
   - component: {fileID: 2857965179169225027}
   - component: {fileID: 8241241569264086522}
+  - component: {fileID: 7459391566760677878}
   - component: {fileID: 8241241569264086521}
   - component: {fileID: 947470756394217360}
   - component: {fileID: 657536400}
@@ -11521,6 +11522,19 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.83, z: 0}
+--- !u!114 &7459391566760677878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9185322515526018602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee64c3a928ad01443b6bb8b987afd6c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PushPower: 3.5
 --- !u!114 &8241241569264086521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11606,7 +11620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Meter: {fileID: 1275941981737692650}
-  OxygenTick: 30
+  OxygenTick: 5
   DeathPanelUI: {fileID: 0}
 --- !u!1001 &8241241569209351693
 PrefabInstance:
@@ -11768,13 +11782,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 440376334809590173, guid: f64bf1fe70edc9245a8a29ca88f52b2f,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 440376334809590173, guid: f64bf1fe70edc9245a8a29ca88f52b2f,
         type: 3}
-      propertyPath: m_Layer
-      value: 11
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 441223219625148805, guid: f64bf1fe70edc9245a8a29ca88f52b2f,
         type: 3}

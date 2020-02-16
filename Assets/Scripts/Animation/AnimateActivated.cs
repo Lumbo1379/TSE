@@ -7,9 +7,9 @@ public class AnimateActivated : MonoBehaviour
     [Range(0, 5)] public float Speed;
     [ColorUsage(true, true)] public Color StartColour;
     [ColorUsage(true, true)] public Color EndColour;
-    public Material LightMaterial;
     public GameObject CodeNumber;
     public Vector3 CodeNumberOffset;
+    public Vector3 CodeNumberRotationOffset;
 
     private float _startTime;
     private bool _isActive;
@@ -17,13 +17,15 @@ public class AnimateActivated : MonoBehaviour
     private AttractCloseObjects _attractObjects;
     private int _activatedObjectInstanceID;
     private bool _codeRevealed;
+    private Material _newMaterialInstance;
 
     private void Start()
     {
         _isActive = false;
         _attractObjects = GetComponent<AttractCloseObjects>();
         _codeRevealed = false;
-        LightMaterial.SetColor("_EmissiveColor", StartColour);
+        _newMaterialInstance = GetComponent<Renderer>().materials[1]; // Create a new instance of the material so doesn't affect main material
+        _newMaterialInstance.SetColor("_EmissiveColor", StartColour);
     }
 
     private void Update()
@@ -31,9 +33,9 @@ public class AnimateActivated : MonoBehaviour
         if (_isActive)
         {
             float time = (Time.time - _startTime) * Speed;
-            LightMaterial.SetColor("_EmissiveColor", Color.Lerp(StartColour, EndColour, time));
+            _newMaterialInstance.SetColor("_EmissiveColor", Color.Lerp(StartColour, EndColour, time));
 
-            if (LightMaterial.GetColor("_EmissiveColor") == EndColour && !_codeRevealed)
+            if (_newMaterialInstance.GetColor("_EmissiveColor") == EndColour && !_codeRevealed)
             {
                 _codeRevealed = true;
                 ShowCodeNumber();
@@ -42,7 +44,7 @@ public class AnimateActivated : MonoBehaviour
         else
         {
             float time = (Time.time - _startTime) * Speed;
-            LightMaterial.SetColor("_EmissiveColor", Color.Lerp(_currentColour, StartColour, time));
+            _newMaterialInstance.SetColor("_EmissiveColor", Color.Lerp(_currentColour, StartColour, time));
         }
     }
 
@@ -57,7 +59,7 @@ public class AnimateActivated : MonoBehaviour
     {
         _isActive = false;
         _startTime = Time.time;
-        _currentColour = LightMaterial.GetColor("_EmissiveColor");
+        _currentColour = _newMaterialInstance.GetColor("_EmissiveColor");
         _attractObjects.OnLeaveEnableAttract();
     }
 
@@ -80,6 +82,7 @@ public class AnimateActivated : MonoBehaviour
     {
         var codeNumber = Instantiate(CodeNumber, transform.position, CodeNumber.transform.rotation);
         codeNumber.transform.position += CodeNumberOffset;
-        codeNumber.GetComponent<HologramFadeIn>().enabled = true;
+        codeNumber.transform.rotation = Quaternion.Euler(codeNumber.transform.rotation.eulerAngles + CodeNumberRotationOffset);
+        codeNumber.transform.GetChild(0).GetComponent<HologramFadeIn>().enabled = true;
     }
 }
