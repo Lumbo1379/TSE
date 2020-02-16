@@ -2,30 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-//	This script handles automatic opening and closing sliding doors
-//	It is fired by triggers and the door closes if found no character in the trigger area
-
-
-//	Door status
 public enum DoubleSlidingDoorStatus {
 	Closed,
 	Open,
 	Animating
 }
 
-[RequireComponent(typeof(AudioSource))]
 public class DoubleSlidingDoorController : MonoBehaviour {
 
 	private DoubleSlidingDoorStatus status = DoubleSlidingDoorStatus.Closed;
 
 	[SerializeField]
-	private Transform halfDoorLeftTransform;	//	Left panel of the sliding door
+	private Transform halfDoorLeftTransform;
 	[SerializeField]
-	public Transform halfDoorRightTransform;	//	Right panel of the sliding door
+	public Transform halfDoorRightTransform;
 
 	[SerializeField]
-	private float slideDistance	= 0.88f;		//	Sliding distance to open each panel the door
+	private float slideDistance	= 0.88f;
 
 	private Vector3 leftDoorClosedPosition;
 	private Vector3 leftDoorOpenPosition;
@@ -34,7 +27,7 @@ public class DoubleSlidingDoorController : MonoBehaviour {
 	private Vector3 rightDoorOpenPosition;
 
 	[SerializeField]
-	private float speed = 1f;					//	Spped for opening and closing the door
+	private float speed = 1f;
 
 	private int objectsOnDoorArea	= 0;
 
@@ -50,11 +43,11 @@ public class DoubleSlidingDoorController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		leftDoorClosedPosition	= new Vector3 (0f, 0f, 0f);
-		leftDoorOpenPosition	= new Vector3 (0f, 0f, slideDistance);
+		leftDoorClosedPosition	= new Vector3 (0f, halfDoorLeftTransform.transform.localPosition.y, 0f);
+		leftDoorOpenPosition	= new Vector3 (0f, halfDoorLeftTransform.transform.localPosition.y, slideDistance);
 
-		rightDoorClosedPosition	= new Vector3 (0f, 0f, 0f);
-		rightDoorOpenPosition	= new Vector3 (0f, 0f, -slideDistance);
+		rightDoorClosedPosition	= new Vector3 (0f, halfDoorRightTransform.transform.localPosition.y, 0f);
+		rightDoorOpenPosition	= new Vector3 (0f, halfDoorRightTransform.transform.localPosition.y, -slideDistance);
 
 		audioSource = GetComponent<AudioSource>();
 	}
