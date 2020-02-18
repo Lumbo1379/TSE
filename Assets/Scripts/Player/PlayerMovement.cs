@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        //will keep looking for more suitable music to include 
+        //FindObjectOfType<AudioManager>().PlayAudio("MainTheme");
         _controller = GetComponent<CharacterController>();
         _velocity = new Vector3();
         _isGrounded = true;
