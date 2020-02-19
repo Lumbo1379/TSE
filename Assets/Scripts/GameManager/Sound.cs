@@ -21,6 +21,7 @@ public class Sound
     [HideInInspector]
     public AudioSource src;
 
+    public AudioMixerGroup group;
 }
 
 

@@ -16,6 +16,7 @@ public class AudioManager : MonoBehaviour
 
             //volume control
             s.src.volume = s.volume;
+            s.src.outputAudioMixerGroup = s.group;
         }
     }
 
@@ -38,6 +39,8 @@ public class AudioManager : MonoBehaviour
         Sound s = Array.Find(sounds, sound => sound.name == name);
         s.src.volume = s.volume;
     }
+
+    
 
 
 }
