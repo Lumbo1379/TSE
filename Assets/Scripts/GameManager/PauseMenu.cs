@@ -12,7 +12,7 @@ public class PauseMenu : MonoBehaviour
 
     private void Start()
     {
-        //FindObjectOfType<AudioManager>().PlayAudio("MainTheme");
+        
         GamePaused = false;
     }
 
@@ -31,7 +31,7 @@ public class PauseMenu : MonoBehaviour
     //public void so can be triggered from the button itself
     public void Resume()
     {
-        
+        FindObjectOfType<AudioManager>().Resume("MainTheme");
         PauseMenuUI.SetActive(false);
         Time.timeScale = 1f; //sets game time to normal rate
         GamePaused = false;
@@ -39,6 +39,8 @@ public class PauseMenu : MonoBehaviour
 
     private void Pause()
     {
+        //mute music when game paused
+        FindObjectOfType<AudioManager>().Stop("MainTheme");
         PauseMenuUI.SetActive(true);
         //ensures mouse cursor is seen when navigating the menu       
         Cursor.visible = true;

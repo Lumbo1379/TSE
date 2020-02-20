@@ -16,6 +16,7 @@ public class AudioManager : MonoBehaviour
 
             //volume control
             s.src.volume = s.volume;
+            s.src.outputAudioMixerGroup = s.group;
         }
     }
 
@@ -25,6 +26,21 @@ public class AudioManager : MonoBehaviour
         Sound s = Array.Find(sounds, sound => sound.name == name);
         s.src.Play();
     }
+
+    public void Stop(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        //sets volume of music to 0 when game paused, allows music to then continue when resumed
+        s.src.volume = 0;
+    }
+    //called when game is resumed after pause
+    public void Resume(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        s.src.volume = s.volume;
+    }
+
+    
 
 
 }
