@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Moveable
   - OSourceLink
+  - Number
   layers:
   - Default
   - TransparentFX
