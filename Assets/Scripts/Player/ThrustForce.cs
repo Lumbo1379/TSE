@@ -21,7 +21,10 @@ public class ThrustForce : MonoBehaviour
     {
         if (Input.GetMouseButton(0)) // Left click
             DrawRay();
+    }
 
+    private void Update()
+    {
         if (Input.GetMouseButtonUp(0))
         {
             _iKControl.IKActive = false;
