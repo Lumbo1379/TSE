@@ -8,10 +8,26 @@ public class ThrustForce : MonoBehaviour
     [Range(0, 100)] public float Range;
     public Camera Camera;
 
+    private Animator _animator;
+    private IKControl _iKControl;
+
+    private void Start()
+    {
+        _animator = GetComponent<Animator>();
+        _iKControl = GetComponent<IKControl>();
+    }
+
     private void FixedUpdate()
     {
         if (Input.GetMouseButton(0)) // Left click
             DrawRay();
+        else if (Input.GetMouseButtonUp(0))
+        {
+            _iKControl.IKActive = false;
+            _iKControl.LookObject = null;
+            _iKControl.RightHand = null;
+            _animator.SetBool("isForcing", false);
+        }
     }
 
     private void DrawRay()
@@ -22,7 +38,22 @@ public class ThrustForce : MonoBehaviour
         if (Physics.Raycast(ray, out hit, Range))
         {
             if (hit.transform.CompareTag("Moveable")) // CompareTag is quicker than == "Some tag"
+            {
+                _iKControl.IKActive = true;
+                _iKControl.LookObject = hit.transform;
+                _iKControl.RightHand = hit.transform;
+
+                _animator.SetBool("isForcing", true);
                 ThrustObject(hit.point, hit.transform.gameObject, hit.distance);
+            }
+            else
+            {
+                _iKControl.IKActive = false;
+                _iKControl.LookObject = null;
+                _iKControl.RightHand = null;
+
+                _animator.SetBool("isForcing", false);
+            }
         }
     }
 
