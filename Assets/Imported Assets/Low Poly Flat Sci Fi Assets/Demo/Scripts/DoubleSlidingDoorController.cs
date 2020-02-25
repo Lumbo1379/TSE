@@ -10,6 +10,8 @@ public enum DoubleSlidingDoorStatus {
 
 public class DoubleSlidingDoorController : MonoBehaviour {
 
+    public bool Open { get; set; }
+
 	private DoubleSlidingDoorStatus status = DoubleSlidingDoorStatus.Closed;
 
 	[SerializeField]
@@ -42,7 +44,10 @@ public class DoubleSlidingDoorController : MonoBehaviour {
 
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
+        Open = false;
+
 		leftDoorClosedPosition	= new Vector3 (0f, halfDoorLeftTransform.transform.localPosition.y, 0f);
 		leftDoorOpenPosition	= new Vector3 (0f, halfDoorLeftTransform.transform.localPosition.y, slideDistance);
 
@@ -54,29 +59,11 @@ public class DoubleSlidingDoorController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (status != DoubleSlidingDoorStatus.Animating) {
-			if (status == DoubleSlidingDoorStatus.Open) {
-				if (objectsOnDoorArea == 0) {
-					StartCoroutine ("CloseDoors");
-				}
-			}
-		}
-	}
+        if (Open && status == DoubleSlidingDoorStatus.Closed)
+            StartCoroutine("OpenDoors");
+    }
 
-	void OnTriggerEnter(Collider other) {
-		
-		if (status != DoubleSlidingDoorStatus.Animating) {
-			if (status == DoubleSlidingDoorStatus.Closed) {
-				StartCoroutine ("OpenDoors");
-			}
-		}
-
-		if (other.GetComponent<Collider>().gameObject.layer == LayerMask.NameToLayer ("Characters")) {
-			objectsOnDoorArea++;
-		}
-	}
-
-	void OnTriggerStay(Collider other) {
+    void OnTriggerStay(Collider other) {
 		
 	}
 

@@ -16,6 +16,7 @@ public class MouseLook : MonoBehaviour
         _xRotation = 0;
 
         Cursor.lockState = CursorLockMode.Locked; // Hide and lock cursor
+        Cursor.visible = false;
     }
 
     private void Update()

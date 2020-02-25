@@ -9,6 +9,7 @@ public class ButtonScreenController : MonoBehaviour
     public Transform Key3;
     public string Code;
     public Material DoorOpenMaterial;
+    public DoubleSlidingDoorController DoubleSlidingDoorController;
 
     private int _key;
     private bool _blockInput;
@@ -60,6 +61,7 @@ public class ButtonScreenController : MonoBehaviour
         if (_inputCode == Code)
         {
             _blockInput = true;
+            DoubleSlidingDoorController.Open = true;
             transform.parent.GetComponent<MeshRenderer>().materials[1] = DoorOpenMaterial;
         }
         else

@@ -31,6 +31,8 @@ public class PauseMenu : MonoBehaviour
     //public void so can be triggered from the button itself
     public void Resume()
     {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         FindObjectOfType<AudioManager>().Resume("MainTheme");
         PauseMenuUI.SetActive(false);
         Time.timeScale = 1f; //sets game time to normal rate
@@ -39,6 +41,8 @@ public class PauseMenu : MonoBehaviour
 
     private void Pause()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
         //mute music when game paused
         FindObjectOfType<AudioManager>().Stop("MainTheme");
         PauseMenuUI.SetActive(true);
