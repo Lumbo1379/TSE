@@ -22,6 +22,8 @@ public class InteractE : MonoBehaviour
         {
             if (hit.transform.CompareTag("Number"))
                 hit.transform.GetComponent<PressButton>().Press();
+            else if (hit.transform.CompareTag("BigRedButton"))
+                hit.transform.GetComponent<MoveTrapdoor>().PressButton();
         }
     }
 }
