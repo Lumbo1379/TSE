@@ -55,8 +55,8 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadMenu()
     {
-        //uses scene builder to load menu as it is before the main scene in build settings
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1); ;
+        //ensures user always goes back to menu when they click
+        SceneManager.LoadScene("MainMenu"); ;
     }
 
     public void QuitGame()
