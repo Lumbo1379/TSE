@@ -12222,6 +12222,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OxygenMeter: {fileID: 1523311645}
+  StartColour:
+    serializedVersion: 2
+    rgba: 3487190
 --- !u!114 &1362326722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18955,10 +18958,19 @@ PrefabInstance:
       propertyPath: DeathPanelUI
       value: 
       objectReference: {fileID: 10361820}
+    - target: {fileID: 1545022156, guid: 867e0adc2c101434791423b4ae5ac443, type: 3}
+      propertyPath: OxygenTick
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 947470756394217360, guid: 867e0adc2c101434791423b4ae5ac443,
+        type: 3}
+      propertyPath: OxygenGain
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 8241241568971484663, guid: 867e0adc2c101434791423b4ae5ac443,
         type: 3}
       propertyPath: YRotationAmount
-      value: 100
+      value: 105
       objectReference: {fileID: 0}
     - target: {fileID: 2205760152630522155, guid: 867e0adc2c101434791423b4ae5ac443,
         type: 3}

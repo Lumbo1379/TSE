@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class LowHealthHUDController : MonoBehaviour
 {
     public OxygenMeter OxygenMeter;
+    [ColorUsage(true, true)] public Color32 StartColour;
 
     private Image _panelHUD;
 
@@ -17,6 +18,6 @@ public class LowHealthHUDController : MonoBehaviour
 
     private void Update()
     {
-        _panelHUD.color = new Color32(Convert.ToByte(_panelHUD.color.r), Convert.ToByte(_panelHUD.color.g), Convert.ToByte(_panelHUD.color.b), Convert.ToByte(Mathf.Abs(OxygenMeter.Oxygen - 100)));
+        _panelHUD.color = new Color32(Convert.ToByte(StartColour.r), Convert.ToByte(StartColour.g), Convert.ToByte(StartColour.b), Convert.ToByte(Mathf.Abs(OxygenMeter.Oxygen - 100) / 3));
     }
 }
