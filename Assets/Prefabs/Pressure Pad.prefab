@@ -99,7 +99,7 @@ MonoBehaviour:
   PullRadius: 5
   ForceReducation: 10000
   ConstantAttract: 0
-  DisableAttractDelay: 1
+  DisableAttractDelay: 3
 --- !u!114 &4719816786465777845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,9 +115,9 @@ MonoBehaviour:
   Speed: 0.6
   StartColour: {r: 0, g: 0, b: 0, a: 1}
   EndColour: {r: 1, g: 0.13679248, b: 0.5700888, a: 1}
-  LightMaterial: {fileID: 0}
   CodeNumber: {fileID: 0}
   CodeNumberOffset: {x: 0, y: 0, z: 0}
+  CodeNumberRotationOffset: {x: 0, y: 0, z: 0}
 --- !u!64 &3286417276732734046
 MeshCollider:
   m_ObjectHideFlags: 0
