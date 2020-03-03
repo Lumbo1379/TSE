@@ -41,7 +41,7 @@ public class ThrustForce : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, Range))
         {
-            if (hit.transform.CompareTag("Moveable")) // CompareTag is quicker than == "Some tag"
+            if (hit.transform.CompareTag("Moveable") || hit.transform.CompareTag("OSourceLink")) // CompareTag is quicker than == "Some tag"
             {
                 _iKControl.IKActive = true;
                 _iKControl.LookObject = hit.transform;
