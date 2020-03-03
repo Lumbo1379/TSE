@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController _controller;
     private Vector3 _velocity;
     private bool _isGrounded;
+    private float _startSpeed;
 
     private void Start()
     {
@@ -23,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
         FindObjectOfType<AudioManager>().PlayAudio("MainTheme");
         _controller = GetComponent<CharacterController>();
         _velocity = new Vector3();
+        _startSpeed = SpeedIncrease + Speed;
         _isGrounded = true;
     }
 
@@ -49,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.LeftShift) && _isGrounded)
             Speed += SpeedIncrease;
-        else if (Input.GetKeyUp(KeyCode.LeftShift)&& _isGrounded)
-            Speed -= SpeedIncrease;
+        else if (Input.GetKeyUp(KeyCode.LeftShift) || !_isGrounded)
+            Speed = _startSpeed;
     }
 }
