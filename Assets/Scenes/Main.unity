@@ -18993,6 +18993,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: FPS Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1545022156, guid: 867e0adc2c101434791423b4ae5ac443, type: 3}
+      propertyPath: DeathPanelUI
+      value: 
+      objectReference: {fileID: 10361820}
+    - target: {fileID: 1545022156, guid: 867e0adc2c101434791423b4ae5ac443, type: 3}
+      propertyPath: OxygenTick
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5270209858753631289, guid: 867e0adc2c101434791423b4ae5ac443,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19047,14 +19055,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1545022156, guid: 867e0adc2c101434791423b4ae5ac443, type: 3}
-      propertyPath: DeathPanelUI
-      value: 
-      objectReference: {fileID: 10361820}
-    - target: {fileID: 1545022156, guid: 867e0adc2c101434791423b4ae5ac443, type: 3}
-      propertyPath: OxygenTick
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 947470756394217360, guid: 867e0adc2c101434791423b4ae5ac443,
         type: 3}

@@ -19,7 +19,7 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (Input.GetKeyDown("p"))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (GamePaused)
                 Resume(); //resume game as pause has already been pressed - therefore already in pause screen
