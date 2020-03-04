@@ -65,7 +65,7 @@ public class AnimateActivated : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Moveable") && !_isActive)
+        if (other.CompareTag("EnergyOrb") && !_isActive)
         {
             _activatedObjectInstanceID = other.gameObject.GetInstanceID();
             SetActive();
@@ -74,7 +74,7 @@ public class AnimateActivated : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Moveable") && _isActive && other.gameObject.GetInstanceID() == _activatedObjectInstanceID)
+        if (other.CompareTag("EnergyOrb") && _isActive && other.gameObject.GetInstanceID() == _activatedObjectInstanceID)
             SetInactive();
     }
 

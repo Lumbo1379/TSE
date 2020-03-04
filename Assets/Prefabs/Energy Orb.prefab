@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 7058643708156978126}
   - component: {fileID: 7058643708156978114}
   m_Layer: 0
-  m_Name: Sphere
-  m_TagString: Moveable
+  m_Name: Energy Orb
+  m_TagString: EnergyOrb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

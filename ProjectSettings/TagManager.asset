@@ -9,6 +9,7 @@ TagManager:
   - Number
   - BigRedButton
   - RespawnZone
+  - EnergyOrb
   layers:
   - Default
   - TransparentFX

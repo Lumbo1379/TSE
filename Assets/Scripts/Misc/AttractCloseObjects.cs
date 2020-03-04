@@ -23,7 +23,7 @@ public class AttractCloseObjects : MonoBehaviour
     {
         foreach (Collider collider in Physics.OverlapSphere(transform.position, PullRadius))
         {
-            if (collider.CompareTag("Moveable"))
+            if (collider.CompareTag("EnergyOrb"))
             {
                 Vector3 direction = transform.position - collider.transform.position;
                 collider.GetComponent<Rigidbody>().AddForce(direction.normalized * _runningForce * Time.fixedDeltaTime);
