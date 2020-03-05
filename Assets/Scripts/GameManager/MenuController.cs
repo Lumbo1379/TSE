@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
-    void Start()
-    {
-        FindObjectOfType<AudioManager>().PlayAudio("Menu");
-    }
+    //void Awake()
+    //{
+    //    FindObjectOfType<AudioManager>().PlayAudio("Menu");
+    //}
 
     //private void Update()
     //{

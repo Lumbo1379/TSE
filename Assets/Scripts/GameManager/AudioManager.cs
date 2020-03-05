@@ -11,15 +11,17 @@ public class AudioManager : MonoBehaviour
     void Awake()
     {
 
-        //if(instance == null)
-        //{
-        //    instance = this;
-        //}
-        //else
-        //{
-        //    Destroy(gameObject);
-        //    return;
-        //}
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        
 
         //DontDestroyOnLoad(gameObject);
 
@@ -35,7 +37,11 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    
+    private void Start()
+    {
+        PlayAudio("Menu");
+    }
+
     public void PlayAudio(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
