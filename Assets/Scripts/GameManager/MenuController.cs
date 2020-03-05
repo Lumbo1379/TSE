@@ -6,12 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
-    private void Start()
+    void Start()
     {
         FindObjectOfType<AudioManager>().PlayAudio("Menu");
     }
 
-    
+    //private void Update()
+    //{
+    //    FindObjectOfType<AudioManager>().PlayAudio("Menu");
+    //}
 
 
     public void PlayGame()
