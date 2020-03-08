@@ -10,6 +10,7 @@ TagManager:
   - BigRedButton
   - RespawnZone
   - EnergyOrb
+  - Reflectable
   layers:
   - Default
   - TransparentFX
