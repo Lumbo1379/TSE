@@ -11,6 +11,8 @@ TagManager:
   - RespawnZone
   - EnergyOrb
   - Reflectable
+  - Interactable
+  - StaticReflectable
   layers:
   - Default
   - TransparentFX

@@ -33,7 +33,7 @@ public class Laser : MonoBehaviour
                 remainingLength -= Vector3.Distance(ray.direction, hit.normal);
                 ray = new Ray(hit.point, Vector3.Reflect(ray.direction, hit.normal));
 
-                if (!hit.collider.CompareTag("Reflectable"))
+                if (!hit.collider.CompareTag("Reflectable") && !hit.collider.CompareTag("StaticReflectable"))
                     break;
             }
             else
