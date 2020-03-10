@@ -29,7 +29,7 @@ public class SuckOxygen : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButton(1)) // Right click
+        if (Input.GetMouseButtonDown(1)) // Right click
             DrawRay();
 
         if (Input.GetMouseButtonUp(1))
@@ -42,6 +42,7 @@ public class SuckOxygen : MonoBehaviour
 
     private void DrawRay()
     {
+        FindObjectOfType<AudioManager>().PlayAudio("Laser");
         RaycastHit hit;
         Ray ray = Camera.ScreenPointToRay(Input.mousePosition);
 
