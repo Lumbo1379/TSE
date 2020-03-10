@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveTrapdoor : MonoBehaviour
+public class MoveTrapdoor : MonoBehaviour, IInteractable
 {
     [Range(0, 25)] public float MoveSpeed;
     [Range(0, 10)] public float ResetTime;
@@ -22,7 +22,7 @@ public class MoveTrapdoor : MonoBehaviour
         Trapdoor.transform.localPosition = Vector3.MoveTowards(Trapdoor.transform.localPosition, _currentTarget, MoveSpeed * Time.deltaTime);
     }
 
-    public void PressButton()
+    public void Interact()
     {
         _currentTarget = TargetPosition;
 

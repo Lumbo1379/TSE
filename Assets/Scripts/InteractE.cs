@@ -20,10 +20,8 @@ public class InteractE : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit))
         {
-            if (hit.transform.CompareTag("Number"))
-                hit.transform.GetComponent<PressButton>().Press();
-            else if (hit.transform.CompareTag("BigRedButton"))
-                hit.transform.GetComponent<MoveTrapdoor>().PressButton();
+            if (hit.transform.CompareTag("Interactable") || hit.transform.CompareTag("Reflectable"))
+                hit.transform.gameObject.GetComponent<IInteractable>().Interact();
         }
     }
 }

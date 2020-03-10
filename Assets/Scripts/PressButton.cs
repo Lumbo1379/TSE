@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PressButton : MonoBehaviour
+public class PressButton : MonoBehaviour, IInteractable
 {
     public string Code;
 
@@ -13,7 +13,7 @@ public class PressButton : MonoBehaviour
         _buttonScreenController = transform.parent.GetComponent<ButtonScreenController>();
     }
 
-    public void Press()
+    public void Interact()
     {
         _buttonScreenController.ButtonPressed(gameObject, Code);
     }
