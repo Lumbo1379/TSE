@@ -6459,6 +6459,11 @@ PrefabInstance:
       propertyPath: CodeNumberRotationOffset.y
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 3134987829971912702, guid: 3b59ba0cd5f135a47bddb96abc7450c8,
+        type: 3}
+      propertyPath: ConstantAttract
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b59ba0cd5f135a47bddb96abc7450c8, type: 3}
 --- !u!4 &454406229 stripped
@@ -10644,7 +10649,7 @@ PrefabInstance:
     - target: {fileID: 1936987055303396295, guid: 57e1df9b12bd7134ab5b07df9584f16b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.968
+      value: 5.893
       objectReference: {fileID: 0}
     - target: {fileID: 1936987055303396295, guid: 57e1df9b12bd7134ab5b07df9584f16b,
         type: 3}
@@ -21149,6 +21154,11 @@ PrefabInstance:
       propertyPath: CodeNumberRotationOffset.y
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 3134987829971912702, guid: 3b59ba0cd5f135a47bddb96abc7450c8,
+        type: 3}
+      propertyPath: ConstantAttract
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b59ba0cd5f135a47bddb96abc7450c8, type: 3}
 --- !u!1001 &1501679936
@@ -30456,6 +30466,11 @@ PrefabInstance:
       propertyPath: LightMaterial
       value: 
       objectReference: {fileID: 2100000, guid: 8e06c71587ffa4d4ba7255ecd1b1914c, type: 2}
+    - target: {fileID: 3134987829971912702, guid: 3b59ba0cd5f135a47bddb96abc7450c8,
+        type: 3}
+      propertyPath: ConstantAttract
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b59ba0cd5f135a47bddb96abc7450c8, type: 3}
 --- !u!1 &8764243367964007077 stripped
