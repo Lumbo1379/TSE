@@ -24,6 +24,9 @@ public class ButtonScreenController : MonoBehaviour
 
     public void ButtonPressed(GameObject pressed, string code)
     {
+        //button noise
+        FindObjectOfType<AudioManager>().PlayAudio("ButtonPress");
+
         if (_blockInput)
             return;
 
