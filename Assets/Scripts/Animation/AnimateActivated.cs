@@ -38,6 +38,7 @@ public class AnimateActivated : MonoBehaviour
             if (_newMaterialInstance.GetColor("_EmissiveColor") == EndColour && !_codeRevealed)
             {
                 _codeRevealed = true;
+
                 ShowCodeNumber();
             }
         }
@@ -50,7 +51,7 @@ public class AnimateActivated : MonoBehaviour
 
     private void SetActive()
     {
-    _isActive = true;
+        _isActive = true;
         _startTime = Time.time;
         _attractObjects.OnActiveDisableAttract();
     }
