@@ -48,11 +48,11 @@ public class DoubleSlidingDoorController : MonoBehaviour {
     {
         Open = false;
 
-		leftDoorClosedPosition	= new Vector3 (0f, halfDoorLeftTransform.transform.localPosition.y, 0f);
-		leftDoorOpenPosition	= new Vector3 (0f, halfDoorLeftTransform.transform.localPosition.y, slideDistance);
+		leftDoorClosedPosition	= new Vector3 (halfDoorLeftTransform.transform.localPosition.x, halfDoorLeftTransform.transform.localPosition.y, halfDoorLeftTransform.transform.localPosition.z);
+		leftDoorOpenPosition	= new Vector3 (halfDoorLeftTransform.transform.localPosition.x, halfDoorLeftTransform.transform.localPosition.y, halfDoorLeftTransform.transform.localPosition.z + slideDistance);
 
-		rightDoorClosedPosition	= new Vector3 (0f, halfDoorRightTransform.transform.localPosition.y, 0f);
-		rightDoorOpenPosition	= new Vector3 (0f, halfDoorRightTransform.transform.localPosition.y, -slideDistance);
+		rightDoorClosedPosition	= new Vector3 (halfDoorRightTransform.transform.localPosition.x, halfDoorRightTransform.transform.localPosition.y, halfDoorRightTransform.transform.localPosition.z);
+		rightDoorOpenPosition	= new Vector3 (halfDoorRightTransform.transform.localPosition.x, halfDoorRightTransform.transform.localPosition.y, halfDoorRightTransform.transform.localPosition.z - slideDistance);
 
 		audioSource = GetComponent<AudioSource>();
 	}
@@ -87,10 +87,10 @@ public class DoubleSlidingDoorController : MonoBehaviour {
 		while (t < 1f) {
 			t += Time.deltaTime * speed;
 		
-			halfDoorLeftTransform.localPosition = Vector3.Slerp(leftDoorClosedPosition, leftDoorOpenPosition, t);
-			halfDoorRightTransform.localPosition = Vector3.Slerp(rightDoorClosedPosition, rightDoorOpenPosition, t);
+			halfDoorLeftTransform.localPosition = Vector3.MoveTowards(halfDoorLeftTransform.transform.localPosition, leftDoorOpenPosition, speed * Time.deltaTime);
+            halfDoorRightTransform.localPosition = Vector3.MoveTowards(halfDoorRightTransform.transform.localPosition, rightDoorOpenPosition, speed * Time.deltaTime);
 
-			yield return null;
+            yield return null;
 		}
 
 		status = DoubleSlidingDoorStatus.Open;
