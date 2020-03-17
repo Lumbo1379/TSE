@@ -32,7 +32,7 @@ public class OxygenMeter : MonoBehaviour
 
         //when player is struggling they start to lose their breath
 
-        if (Oxygen <= 15)
+        while (Oxygen <= 15)
         {
             FindObjectOfType<AudioManager>().PlayAudio("breathShortness");
         }
