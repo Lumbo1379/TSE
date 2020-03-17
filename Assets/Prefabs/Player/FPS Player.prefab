@@ -11352,7 +11352,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MouseSensitivity: 300
-  YRotationAmount: 120
+  UpperYRotationAmount: 180
+  LowerYRotationAmount: 105
 --- !u!114 &349327932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11617,8 +11618,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.4957575, y: 1.6701325, z: 1}
-  m_Center: {x: -0.0015802145, y: 0.85758364, z: 1.5445752e-12}
+  m_Size: {x: 0.4957575, y: 1.6701325, z: 0.43125406}
+  m_Center: {x: -0.0015802144, y: 0.85758364, z: -0.01647697}
 --- !u!143 &8241241569264086522
 CharacterController:
   m_ObjectHideFlags: 0
@@ -11694,7 +11695,7 @@ MonoBehaviour:
   BloodExplosionEffect: {fileID: 7494376509268726807, guid: adc581f3744ec9346982e77d9d497f23,
     type: 3}
   DeathBloodSplat: {fileID: 0}
-  OxygenGain: 10
+  OxygenGain: 35
 --- !u!114 &657536400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11735,7 +11736,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Meter: {fileID: 1275941981737692650}
-  OxygenTick: 5
+  OxygenTick: 1
   DeathPanelUI: {fileID: 0}
 --- !u!114 &1523311644
 MonoBehaviour:

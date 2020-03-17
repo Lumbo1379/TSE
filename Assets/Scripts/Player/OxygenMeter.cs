@@ -16,7 +16,10 @@ public class OxygenMeter : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         Oxygen = 100;
+    }
 
+    public void BeginDepletingOxygen()
+    {
         InvokeRepeating("DepleteOxygen", OxygenTick, OxygenTick);
     }
 
@@ -28,7 +31,8 @@ public class OxygenMeter : MonoBehaviour
             _animator.SetBool("isChecking", false);
 
         //when player is struggling they start to lose their breath
-        if(Oxygen < 15)
+
+        if (Oxygen <= 15)
         {
             FindObjectOfType<AudioManager>().PlayAudio("breathShortness");
         }
