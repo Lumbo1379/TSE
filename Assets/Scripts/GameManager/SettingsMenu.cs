@@ -14,6 +14,7 @@ public class SettingsMenu : MonoBehaviour
         
     }
 
+    //sound affects by default will be quieter than the soundtrack
     public void SFXControl(float volume)
     {
         SFXmixer.SetFloat("volume", volume);

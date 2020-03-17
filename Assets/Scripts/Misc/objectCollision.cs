@@ -6,15 +6,16 @@ using UnityEngine;
 public class objectCollision : MonoBehaviour
 {
 
-    public AudioSource audio;
+    private AudioSource audio;
 
-    private Rigidbody rb;
-    private Vector3 vector;
+    [SerializeField]
+    private AudioClip objectSound;
+
+    
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        vector = rb.velocity;
+        audio = GetComponent<AudioSource>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -22,7 +23,7 @@ public class objectCollision : MonoBehaviour
         //used 'untagged' currently because that is easier than setting all surfaces to a new tag
         if (collision.gameObject.CompareTag("Moveable") || collision.gameObject.CompareTag("Untagged"))
         {
-            audio.Play();
+            audio.PlayOneShot(objectSound);
         }
 
     }
