@@ -48,12 +48,13 @@ public class ThrustForce : MonoBehaviour
                 _iKControl.LookObject = hit.transform;
                 _iKControl.RightHand = hit.transform;
 
+                
                 _animator.SetBool("isForcing", true);
                 ThrustObject(hit.point, hit.transform.gameObject, hit.distance);
 
                 if(hit.transform.CompareTag("Moveable")) //makes appropriate sounds for moveable objects
                 {
-                    FindObjectOfType<AudioManager>().PlayAudio("Crash");
+                    //FindObjectOfType<AudioManager>().PlayAudio("Crash");
                 }
             }
             else
@@ -69,7 +70,7 @@ public class ThrustForce : MonoBehaviour
 
     private void ThrustObject(Vector3 hitPosition, GameObject obj, float distanceAway)
     {
-        
+        FindObjectOfType<AudioManager>().PlayAudio("forcePower");
         var fallOff = (Range - distanceAway) / Range;
         var rb = obj.GetComponent<Rigidbody>();
         var direction = obj.transform.position - transform.position;

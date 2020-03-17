@@ -30,10 +30,12 @@ public class SuckOxygen : MonoBehaviour
     private void Update()
     {
         if (Input.GetMouseButtonDown(1)) // Right click 
+            
             DrawRay();
 
         if (Input.GetMouseButtonUp(1))
         {
+            
             if (_currentSelection != null)
                 DeselectObject(false);
         }
@@ -78,7 +80,11 @@ public class SuckOxygen : MonoBehaviour
             Invoke("ShowEffect", EffectDelay);
 
             if (_currentSelection != null)
+            {
+                
                 DeselectObject(true);
+            }
+                
             else
                 FindObjectOfType<AudioManager>().PlayAudio("Laser");
             _playerAnimator.SetBool("isSucking", true);
@@ -107,6 +113,7 @@ public class SuckOxygen : MonoBehaviour
         _iKControl.LookObject = null;
         _iKControl.RightHand = null;
 
+        //FindObjectOfType<AudioManager>().Stop("Laser");
         _playerAnimator.SetBool("isSucking", switchSeamless);
         LifeForceSuckEffect.SetActive(switchSeamless);
         EffectOrigin.SetActive(switchSeamless);
