@@ -12,4 +12,14 @@ public class AddGravity : MonoBehaviour
 
         GetComponent<Rigidbody>().AddForce(randomDirection * InitialForce);
     }
+
+    //for collision with other objects
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Moveable"))
+        {
+            FindObjectOfType<AudioManager>().PlayAudio("objectCollision");
+        }
+
+    }
 }

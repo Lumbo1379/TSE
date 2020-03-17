@@ -51,6 +51,8 @@ public class AnimateActivated : MonoBehaviour
 
     private void SetActive()
     {
+        FindObjectOfType<AudioManager>().PlayAudio("pressurePadActivated");
+
         _isActive = true;
         _startTime = Time.time;
         _attractObjects.OnActiveDisableAttract();

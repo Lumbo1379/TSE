@@ -22,6 +22,8 @@ public class InstantiateBloodSplat : MonoBehaviour
 
     private void SpawnBloodSplat(Vector3 point)
     {
+        FindObjectOfType<AudioManager>().PlayAudio("bloodSplat");
+        
         var decalProjector = Instantiate(DecalProjector, point, DecalProjector.transform.rotation).GetComponent<DecalProjectorComponent>();
         decalProjector.material = _bloodSplatMaterial;
 

@@ -27,11 +27,18 @@ public class OxygenMeter : MonoBehaviour
         else if (Input.GetKeyUp(KeyCode.Tab))
             _animator.SetBool("isChecking", false);
 
+        //when player is struggling they start to lose their breath
+        if(Oxygen <= 15)
+        {
+            FindObjectOfType<AudioManager>().PlayAudio("breathShortness");
+        }
+
         if (Oxygen < 0)
         {
             CancelInvoke("DepleteOxygen");
             PlayerDead();
         }
+
     }
 
     private void DepleteOxygen()
@@ -50,6 +57,7 @@ public class OxygenMeter : MonoBehaviour
 
     private void PlayerDead()
     {
+        FindObjectOfType<AudioManager>().PlayAudio("deathMusic");
         DeathPanelUI.SetActive(true);
     }
 }

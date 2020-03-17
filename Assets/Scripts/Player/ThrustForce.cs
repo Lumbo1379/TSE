@@ -19,7 +19,7 @@ public class ThrustForce : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Input.GetMouseButton(0)) // Left click
+        if (Input.GetMouseButtonDown(0)) // Left click
             DrawRay();
     }
 

@@ -42,7 +42,7 @@ public class SuckOxygen : MonoBehaviour
 
     private void DrawRay()
     {
-        FindObjectOfType<AudioManager>().PlayAudio("Laser"); 
+        
         RaycastHit hit;
         Ray ray = Camera.ScreenPointToRay(Input.mousePosition);
 
@@ -61,9 +61,13 @@ public class SuckOxygen : MonoBehaviour
             if (collision.CompareTag("OSourceLink"))
             {
                 var rabbit = collision.GetComponent<OSourceLink>().Rabbit;
-
+                
                 if (rabbit != null)
+                {
+                    
                     collision = rabbit.transform;
+                }
+                   
                 else
                 {
                     collision.gameObject.layer = 0;
@@ -76,7 +80,9 @@ public class SuckOxygen : MonoBehaviour
             if (_currentSelection != null)
                 DeselectObject(true);
             else
-                _playerAnimator.SetBool("isSucking", true);
+                FindObjectOfType<AudioManager>().PlayAudio("Laser");
+            _playerAnimator.SetBool("isSucking", true);
+
 
             _currentSelection = collision.gameObject;
 
@@ -123,6 +129,7 @@ public class SuckOxygen : MonoBehaviour
 
     public void BlowUpAnimalEvent()
     {
+        FindObjectOfType<AudioManager>().PlayAudio("rabbitExplosion");
         var selectionPos = _currentSelection.GetComponent<SkinnedMeshRenderer>().bounds.center;
 
         Instantiate(BloodExplosionEffect,
