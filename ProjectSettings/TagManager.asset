@@ -14,6 +14,7 @@ TagManager:
   - Interactable
   - StaticReflectable
   - LaserConduit
+  - Environment
   layers:
   - Default
   - TransparentFX
