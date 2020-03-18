@@ -11092,6 +11092,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Robot Kyle
       objectReference: {fileID: 0}
+    - target: {fileID: 399063149123741488, guid: 320b1c2af77554f99a1658df4a6d3d5c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 320b1c2af77554f99a1658df4a6d3d5c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11211,11 +11216,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 80.925
-      objectReference: {fileID: 0}
-    - target: {fileID: 399063149123741488, guid: 320b1c2af77554f99a1658df4a6d3d5c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3570149868347407693, guid: 320b1c2af77554f99a1658df4a6d3d5c,
         type: 3}
@@ -26574,7 +26574,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1605416904
 RectTransform:
   m_ObjectHideFlags: 0
@@ -26622,7 +26622,7 @@ MonoBehaviour:
   - {fileID: 1003497344}
   KeyToContinue: 20000000200000000900000020000000
   Player: {fileID: 105080323}
-  OxygenMeter: {fileID: 0}
+  OxygenMeter: {fileID: 1523311645}
   Kyle: {fileID: 546287123}
 --- !u!114 &1605416906
 MonoBehaviour:
