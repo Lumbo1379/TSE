@@ -10,7 +10,7 @@ public class DialogueController : MonoBehaviour
     public KeyCode[] KeyToContinue;
     public PlayerMovement Player;
     public OxygenMeter OxygenMeter;
-    public GameObject Kyle;
+    public KyleFadeOut Kyle;
 
     private int _incrementer;
     private float _playerSpeed;
@@ -31,26 +31,26 @@ public class DialogueController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyToContinue[_incrementer]))
+        if (_incrementer < AudioSource.Length)
         {
-            AudioSource[_incrementer].Stop();
-            Text[_incrementer].SetActive(false);
-
-            _incrementer++;
-
-            if (_incrementer != AudioSource.Length)
+            if (Input.GetKeyDown(KeyToContinue[_incrementer]))
             {
-                AudioSource[_incrementer].Play();
-                Text[_incrementer].SetActive(true);
-            }
-            else
-            {
-                Player.Speed = _playerSpeed;
-                Player.StartSpeed = _playerSpeed;
-                Player.JumpHeight = _playerJumpHeight;
-                OxygenMeter.BeginDepletingOxygen();
-                Kyle.SetActive(false);
-                gameObject.SetActive(false);
+                AudioSource[_incrementer].Stop();
+                Text[_incrementer].SetActive(false);
+
+                _incrementer++;
+
+                if (_incrementer != AudioSource.Length)
+                    Text[_incrementer].SetActive(true);
+                else
+                {
+                    Player.Speed = _playerSpeed;
+                    Player.StartSpeed = _playerSpeed;
+                    Player.JumpHeight = _playerJumpHeight;
+                    OxygenMeter.BeginDepletingOxygen();
+                    Kyle.FadeOut();
+                    gameObject.SetActive(false);
+                }
             }
         }
     }

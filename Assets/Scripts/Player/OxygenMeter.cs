@@ -42,9 +42,9 @@ public class OxygenMeter : MonoBehaviour
             _shortOfBreath = true;
             FindObjectOfType<AudioManager>().PlayAudio("breathShortness");
         }
-        else if (Oxygen > ShortOfBreathTrigger)
+        else if (Oxygen > ShortOfBreathTrigger && _shortOfBreath)
         {
-            FindObjectOfType<AudioManager>().Stop("breathShortness");
+            FindObjectOfType<AudioManager>().End("breathShortness");
             _shortOfBreath = false;
         }
 
