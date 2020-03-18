@@ -8,13 +8,18 @@ public class OxygenMeter : MonoBehaviour
 
     public Transform Meter;
     [Range(0, 60)] public float OxygenTick;
+    [Range(0, 100)] public int ShortOfBreathTrigger;
     public GameObject DeathPanelUI;
 
     private Animator _animator;
+    private bool _shortOfBreath;
+    private bool _dead;
 
     private void Start()
     {
         _animator = GetComponent<Animator>();
+        _shortOfBreath = false;
+        _dead = false;
         Oxygen = 100;
     }
 
@@ -32,12 +37,18 @@ public class OxygenMeter : MonoBehaviour
 
         //when player is struggling they start to lose their breath
 
-        if (Oxygen <= 15)
+        if (Oxygen <= ShortOfBreathTrigger && !_shortOfBreath)
         {
+            _shortOfBreath = true;
             FindObjectOfType<AudioManager>().PlayAudio("breathShortness");
         }
+        else if (Oxygen > ShortOfBreathTrigger)
+        {
+            FindObjectOfType<AudioManager>().Stop("breathShortness");
+            _shortOfBreath = false;
+        }
 
-        if (Oxygen < 0)
+        if (Oxygen < 0 && !_dead)
         {
             CancelInvoke("DepleteOxygen");
             PlayerDead();
@@ -61,6 +72,7 @@ public class OxygenMeter : MonoBehaviour
 
     private void PlayerDead()
     {
+        _dead = true;
         FindObjectOfType<AudioManager>().PlayAudio("deathMusic");
         DeathPanelUI.SetActive(true);
     }

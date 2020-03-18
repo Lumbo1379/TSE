@@ -21643,7 +21643,7 @@ PrefabInstance:
     - target: {fileID: 6369122976601930502, guid: 11c46cff21852ae479d153183ac1457b,
         type: 3}
       propertyPath: sounds.Array.data[9].volume
-      value: 0.77
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6369122976601930502, guid: 11c46cff21852ae479d153183ac1457b,
         type: 3}
@@ -21744,6 +21744,11 @@ PrefabInstance:
         type: 3}
       propertyPath: sounds.Array.data[13].loop
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369122976601930502, guid: 11c46cff21852ae479d153183ac1457b,
+        type: 3}
+      propertyPath: sounds.Array.data[0].volume
+      value: 0.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11c46cff21852ae479d153183ac1457b, type: 3}
@@ -35839,6 +35844,14 @@ PrefabInstance:
       propertyPath: DeathPanelUI
       value: 
       objectReference: {fileID: 10361820}
+    - target: {fileID: 1545022156, guid: 867e0adc2c101434791423b4ae5ac443, type: 3}
+      propertyPath: OxygenTick
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1545022156, guid: 867e0adc2c101434791423b4ae5ac443, type: 3}
+      propertyPath: ShortOfBreathTrigger
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 5270209858753631289, guid: 867e0adc2c101434791423b4ae5ac443,
         type: 3}
       propertyPath: m_LocalPosition.x
