@@ -13,6 +13,7 @@ public class SuckOxygen : MonoBehaviour
     public GameObject BloodExplosionEffect;
     public GameObject DeathBloodSplat;
     [Range(0, 100)] public int OxygenGain;
+    public CompleteGame RabbitDeathCounter;
 
     private GameObject _currentSelection;
     private Animator _playerAnimator;
@@ -148,5 +149,6 @@ public class SuckOxygen : MonoBehaviour
         DeselectObject(false);
 
         _oxygenMeter.UpdateMeterOnSuccessfulSuck(OxygenGain);
+        RabbitDeathCounter.RabbitsKilled++;
     }
 }
