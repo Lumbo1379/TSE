@@ -10,6 +10,7 @@ public class ButtonScreenController : MonoBehaviour
     public string Code;
     public Material DoorOpenMaterial;
     public DoubleSlidingDoorController DoubleSlidingDoorController;
+    public Renderer PanelMeshRenderer;
 
     private int _key;
     private bool _blockInput;
@@ -32,26 +33,30 @@ public class ButtonScreenController : MonoBehaviour
 
         _key++;
 
+        Vector3 instantiatePos;
+
+        instantiatePos = code == "1" ? new Vector3(-0.0419f, 0, 0.05f) : Vector3.zero;
+
         switch (_key)
         {
             case 1:
             {
                 var button = Instantiate(pressed, Key1);
-                button.transform.localPosition = Vector3.zero;
+                button.transform.localPosition = instantiatePos;
                 _inputCode += code;
                 break;
             }
             case 2:
             {
                 var button = Instantiate(pressed, Key2);
-                button.transform.localPosition = Vector3.zero;
+                button.transform.localPosition = instantiatePos;
                 _inputCode += code;
                 break;
             }
             case 3:
             {
                 var button = Instantiate(pressed, Key3);
-                button.transform.localPosition = Vector3.zero;
+                button.transform.localPosition = instantiatePos;
                 _inputCode += code;
                 CheckCode();
                 break;
@@ -65,7 +70,10 @@ public class ButtonScreenController : MonoBehaviour
         {
             _blockInput = true;
             DoubleSlidingDoorController.Open = true;
-            transform.parent.GetComponent<MeshRenderer>().materials[1] = DoorOpenMaterial;
+            var materials = PanelMeshRenderer.materials;
+            materials[1] = DoorOpenMaterial;
+            PanelMeshRenderer.materials = materials;
+
         }
         else
             ResetKeyPad();
@@ -79,7 +87,7 @@ public class ButtonScreenController : MonoBehaviour
         _key = 0;
 
         InvokeRepeating("FlickerKeyPad", 0, 0.5f);
-        Invoke("UnblockKeyPad", 4f);
+        Invoke("UnblockKeyPad", 2f);
     }
 
     private void FlickerKeyPad()

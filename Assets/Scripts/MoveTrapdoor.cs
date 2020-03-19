@@ -9,23 +9,31 @@ public class MoveTrapdoor : MonoBehaviour, IInteractable
     public GameObject Trapdoor;
     public Vector3 TargetPosition;
     public Vector3 ResetPosition;
+    public Vector3 PressedPos;
 
     private Vector3 _currentTarget;
+    private Vector3 _buttonTarget;
+    private Vector3 _originalPos;
 
     private void Start()
     {
         _currentTarget = ResetPosition;
+        _buttonTarget = transform.localPosition;
+        _originalPos = transform.localPosition;
     }
 
     private void Update()
     {
+        transform.localPosition = Vector3.MoveTowards(transform.localPosition, _buttonTarget, MoveSpeed / 10 * Time.deltaTime);
+
         Trapdoor.transform.localPosition = Vector3.MoveTowards(Trapdoor.transform.localPosition, _currentTarget, MoveSpeed * Time.deltaTime);
     }
 
     public void Interact()
     {
         _currentTarget = TargetPosition;
-
+        FindObjectOfType<AudioManager>().PlayAudio("ButtonPress");
+        AnimateButtonPress();
         CancelInvoke("ResetTrapdoor");
         Invoke("ResetTrapdoor", ResetTime);
     }
@@ -33,5 +41,18 @@ public class MoveTrapdoor : MonoBehaviour, IInteractable
     private void ResetTrapdoor()
     {
         _currentTarget = ResetPosition;
+    }
+
+    private void AnimateButtonPress()
+    {
+        _buttonTarget = PressedPos;
+
+        CancelInvoke("ResetPressedButton");
+        Invoke("ResetPressedButton", 0.5f);
+    }
+
+    private void ResetPressedButton()
+    {
+        _buttonTarget = _originalPos;
     }
 }

@@ -13,18 +13,18 @@ public class objectCollision : MonoBehaviour
 
     
 
-    private void Start()
-    {
-        audio = GetComponent<AudioSource>();
-    }
+    //private void Start()
+    //{
+    //    audio = GetComponent<AudioSource>();
+    //}
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        //used 'untagged' currently because that is easier than setting all surfaces to a new tag
-        if (collision.gameObject.CompareTag("Moveable") || collision.gameObject.CompareTag("Untagged"))
-        {
-            audio.PlayOneShot(objectSound);
-        }
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    //used 'untagged' currently because that is easier than setting all surfaces to a new tag
+    //    if (collision.gameObject.CompareTag("Moveable") || collision.gameObject.CompareTag("Untagged"))
+    //    {
+    //        audio.PlayOneShot(objectSound);
+    //    }
 
-    }
+    //}
 }
