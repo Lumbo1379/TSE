@@ -75,5 +75,8 @@ public class OxygenMeter : MonoBehaviour
         _dead = true;
         FindObjectOfType<AudioManager>().PlayAudio("deathMusic");
         DeathPanelUI.SetActive(true);
+
+        Cursor.lockState = CursorLockMode.None; // Show and unlock cursor
+        Cursor.visible = true;
     }
 }
