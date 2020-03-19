@@ -15,7 +15,7 @@ public class OxygenMeter : MonoBehaviour
     private bool _shortOfBreath;
     private bool _dead;
 
-    private void Start()
+    private void Awake()
     {
         _animator = GetComponent<Animator>();
         _shortOfBreath = false;

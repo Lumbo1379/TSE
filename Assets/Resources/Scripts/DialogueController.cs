@@ -29,6 +29,11 @@ public class DialogueController : MonoBehaviour
         AudioSource[0].Play();
     }
 
+    private void Start()
+    {
+        FindObjectOfType<AudioManager>().PlayAudio("MainTheme");
+    }
+
     private void Update()
     {
         if (_incrementer < AudioSource.Length)

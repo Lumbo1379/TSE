@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum DoubleSlidingDoorStatus {
+public enum DoubleSlidingDoorStatus 
+{
 	Closed,
 	Open,
 	Animating
 }
 
-public class DoubleSlidingDoorController : MonoBehaviour {
+public class DoubleSlidingDoorController : MonoBehaviour 
+{
 
     public bool Open { get; set; }
 

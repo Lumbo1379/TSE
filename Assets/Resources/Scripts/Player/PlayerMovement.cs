@@ -13,16 +13,13 @@ public class PlayerMovement : MonoBehaviour
     [Range(0, 25)] public float SpeedIncrease;
     public LayerMask GroundMask;
     public Transform GroundCheck;
-    
 
     private CharacterController _controller;
     private Vector3 _velocity;
     private bool _isGrounded;
 
-    private void Start()
+    private void Awake()
     {
-        //will keep looking for more suitable music to include 
-        FindObjectOfType<AudioManager>().PlayAudio("MainTheme");
         _controller = GetComponent<CharacterController>();
         _velocity = new Vector3();
         _isGrounded = true;
