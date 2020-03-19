@@ -756,7 +756,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clearColorMode: 0
-  backgroundColorHDR: {r: 0.025, g: 0.07, b: 0.19, a: 0}
+  backgroundColorHDR: {r: 0, g: 0, b: 0, a: 0}
   clearDepth: 1
   volumeLayerMask:
     serializedVersion: 2
@@ -1286,7 +1286,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41d0928b50422264bb05dcd2a130f39b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mixer: {fileID: 24100000, guid: e1ef9d689ffa602438a28eacbaa0a79e, type: 2}
+  soundTrackMixer: {fileID: 0}
+  SFXmixer: {fileID: 0}
 --- !u!114 &2014777087
 MonoBehaviour:
   m_ObjectHideFlags: 0
