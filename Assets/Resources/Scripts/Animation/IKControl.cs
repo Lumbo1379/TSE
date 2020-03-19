@@ -28,18 +28,16 @@ public class IKControl : MonoBehaviour
                 }
                 if (RightHand != null)
                 {
-                    _animator.SetIKPositionWeight(AvatarIKGoal.RightHand, 0.25f);
-                    //_animator.SetIKRotationWeight(AvatarIKGoal.RightHand, 1);
+                    _animator.SetIKPositionWeight(AvatarIKGoal.RightHand, 0.25f); // Move 1/4 towards object but not fully
                     _animator.SetIKPosition(AvatarIKGoal.RightHand, (Vector3)RightHand);
-                    //_animator.SetIKRotation(AvatarIKGoal.RightHand, RightHand.rotation);
                 }
 
             }
             else
             {
-                _animator.SetIKPositionWeight(AvatarIKGoal.RightHand, 0);
+                _animator.SetIKPositionWeight(AvatarIKGoal.RightHand, 0); // Reset to original position when used
                 _animator.SetIKRotationWeight(AvatarIKGoal.RightHand, 0);
-                _animator.SetLookAtWeight(0);
+                _animator.SetLookAtWeight(0); // Reset to original position when used
             }
         }
     }

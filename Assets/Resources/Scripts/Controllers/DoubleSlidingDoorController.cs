@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// --------------------------------------------------
+// THIS CODE IS PART OF AN ASSET PACK
+// --------------------------------------------------
 public enum DoubleSlidingDoorStatus 
 {
 	Closed,

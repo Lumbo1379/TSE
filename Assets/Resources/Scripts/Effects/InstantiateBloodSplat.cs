@@ -17,22 +17,22 @@ public class InstantiateBloodSplat : MonoBehaviour
     private void Start()
     {
         int randomNum = Random.Range(0, BloodSplatSprites.Length);
-        _bloodSplatMaterial = BloodSplatMaterials[randomNum];
+        _bloodSplatMaterial = BloodSplatMaterials[randomNum]; // Choose random blood split texture
     }
 
     private void SpawnBloodSplat(Vector3 point)
     {
         FindObjectOfType<AudioManager>().PlayAudio("bloodSplat");
         
-        var decalProjector = Instantiate(DecalProjector, point, DecalProjector.transform.rotation).GetComponent<DecalProjectorComponent>();
+        var decalProjector = Instantiate(DecalProjector, point, DecalProjector.transform.rotation).GetComponent<DecalProjectorComponent>(); // Use HDRP decal projector
         decalProjector.material = _bloodSplatMaterial;
 
         Instantiate(SmallBloodSplat, transform.position, SmallBloodSplat.transform.rotation);
-        Destroy(gameObject);
+        Destroy(gameObject); // Destroy blood splat droplet, does not destroy the decal
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        SpawnBloodSplat(collision.GetContact(0).point);
+        SpawnBloodSplat(collision.GetContact(0).point); // Spawn decal at point of impact
     }
 }

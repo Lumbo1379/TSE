@@ -23,7 +23,7 @@ public class OxygenMeter : MonoBehaviour
         Oxygen = 100;
     }
 
-    public void BeginDepletingOxygen()
+    public void BeginDepletingOxygen() // Called when tutorial finished
     {
         InvokeRepeating("DepleteOxygen", OxygenTick, OxygenTick);
     }
@@ -42,7 +42,7 @@ public class OxygenMeter : MonoBehaviour
             _shortOfBreath = true;
             FindObjectOfType<AudioManager>().PlayAudio("breathShortness");
         }
-        else if (Oxygen > ShortOfBreathTrigger && _shortOfBreath)
+        else if (Oxygen > ShortOfBreathTrigger && _shortOfBreath) // When was short of breath but no longer
         {
             FindObjectOfType<AudioManager>().End("breathShortness");
             _shortOfBreath = false;
@@ -62,7 +62,7 @@ public class OxygenMeter : MonoBehaviour
         Meter.localScale = new Vector3(Meter.localScale.x - 0.01f, Meter.localScale.y, Meter.localScale.z);
     }
 
-    public void UpdateMeterOnSuccessfulSuck(int increase)
+    public void UpdateMeterOnSuccessfulSuck(int increase) // When rabbit lifeforce sucked
     {
         Oxygen += increase;
         Oxygen = Mathf.Clamp(Oxygen, 0, 100);

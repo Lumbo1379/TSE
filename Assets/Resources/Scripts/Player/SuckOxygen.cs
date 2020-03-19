@@ -31,12 +31,10 @@ public class SuckOxygen : MonoBehaviour
     private void Update()
     {
         if (Input.GetMouseButtonDown(1)) // Right click 
-            
             DrawRay();
 
         if (Input.GetMouseButtonUp(1))
         {
-            
             if (_currentSelection != null)
                 DeselectObject(false);
         }
@@ -49,9 +47,9 @@ public class SuckOxygen : MonoBehaviour
         RaycastHit hit;
         Ray ray = Camera.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(ray, out hit, OSuckRange, OSuckMask))
+        if (Physics.Raycast(ray, out hit, OSuckRange, OSuckMask)) // Check for rabbits only on specific layers
             HandleCollision(hit.transform);
-        else if (_currentSelection != null)
+        else if (_currentSelection != null) // If moved off target
             DeselectObject(false);
             
 
@@ -61,19 +59,15 @@ public class SuckOxygen : MonoBehaviour
     {
         if (collision.gameObject != _currentSelection)
         {
-            if (collision.CompareTag("OSourceLink"))
+            if (collision.CompareTag("OSourceLink")) // If rabbit in cage
             {
                 var rabbit = collision.GetComponent<OSourceLink>().Rabbit;
                 
                 if (rabbit != null)
-                {
-                    
                     collision = rabbit.transform;
-                }
-                   
                 else
                 {
-                    collision.gameObject.layer = 0;
+                    collision.gameObject.layer = 0; // If rabbit in cage exploded, make cage not suckable anymore
                     return;
                 }
             }
@@ -81,19 +75,16 @@ public class SuckOxygen : MonoBehaviour
             Invoke("ShowEffect", EffectDelay);
 
             if (_currentSelection != null)
-            {
-                
-                DeselectObject(true);
-            }
-                
+                DeselectObject(true); // If moved off rabbit onto another
             else
                 FindObjectOfType<AudioManager>().PlayAudio("Laser");
+
             _playerAnimator.SetBool("isSucking", true);
 
 
             _currentSelection = collision.gameObject;
 
-            _iKControl.IKActive = true;
+            _iKControl.IKActive = true; // Move hand to centre on rabbit
             _iKControl.LookObject = _currentSelection.transform;
             _iKControl.RightHand = _currentSelection.transform.position;
 
@@ -102,7 +93,7 @@ public class SuckOxygen : MonoBehaviour
         }
     }
 
-    private void DeselectObject(bool switchSeamless)
+    private void DeselectObject(bool switchSeamless) // Seamless = moving from rabbit to another
     {
         if (_currentSelection != null)
         {
@@ -114,7 +105,6 @@ public class SuckOxygen : MonoBehaviour
         _iKControl.LookObject = null;
         _iKControl.RightHand = null;
 
-        //FindObjectOfType<AudioManager>().Stop("Laser");
         _playerAnimator.SetBool("isSucking", switchSeamless);
         LifeForceSuckEffect.SetActive(switchSeamless);
         EffectOrigin.SetActive(switchSeamless);
@@ -126,7 +116,7 @@ public class SuckOxygen : MonoBehaviour
         {
             EffectOrigin.transform.parent = _currentSelection.transform.parent.transform;
 
-            var localPivotPoint = _currentSelection.GetComponent<SkinnedMeshRenderer>().bounds.center.normalized;
+            var localPivotPoint = _currentSelection.GetComponent<SkinnedMeshRenderer>().bounds.center.normalized; // Suck effect from on hand
             EffectOrigin.transform.position = _currentSelection.transform.parent.transform.position;
             EffectOrigin.transform.position += localPivotPoint;
             LifeForceSuckEffect.SetActive(true);

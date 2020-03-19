@@ -25,7 +25,7 @@ public class AnimateActivated : MonoBehaviour
         _attractObjects = GetComponent<AttractCloseObjects>();
         _codeRevealed = false;
         _newMaterialInstance = GetComponent<Renderer>().materials[1]; // Create a new instance of the material so doesn't affect main material
-        _newMaterialInstance.SetColor("_EmissiveColor", StartColour);
+        _newMaterialInstance.SetColor("_EmissiveColor", StartColour); // Strings to communicate with shader properties
     }
 
     private void Update()
@@ -33,23 +33,23 @@ public class AnimateActivated : MonoBehaviour
         if (_isActive)
         {
             float time = (Time.time - _startTime) * Speed;
-            _newMaterialInstance.SetColor("_EmissiveColor", Color.Lerp(StartColour, EndColour, time));
+            _newMaterialInstance.SetColor("_EmissiveColor", Color.Lerp(StartColour, EndColour, time)); // Change colour from start to end using the difference in time from the first change/update when isActive
 
-            if (_newMaterialInstance.GetColor("_EmissiveColor") == EndColour && !_codeRevealed)
+            if (_newMaterialInstance.GetColor("_EmissiveColor") == EndColour && !_codeRevealed) // If fully activated
             {
                 _codeRevealed = true;
 
                 ShowCodeNumber();
             }
         }
-        else
+        else // If orb moved off, revert back 
         {
             float time = (Time.time - _startTime) * Speed;
             _newMaterialInstance.SetColor("_EmissiveColor", Color.Lerp(_currentColour, StartColour, time));
         }
     }
 
-    private void SetActive()
+    private void SetActive() // When orb enters
     {
         FindObjectOfType<AudioManager>().PlayAudio("pressurePadActivated");
 
@@ -58,7 +58,7 @@ public class AnimateActivated : MonoBehaviour
         _attractObjects.OnActiveDisableAttract();
     }
 
-    private void SetInactive()
+    private void SetInactive() // When orb leaves
     {
         _isActive = false;
         _startTime = Time.time;
@@ -81,7 +81,7 @@ public class AnimateActivated : MonoBehaviour
             SetInactive();
     }
 
-    private void ShowCodeNumber()
+    private void ShowCodeNumber() // When pressure pad fully activated
     {
         var codeNumber = Instantiate(CodeNumber, transform.position, CodeNumber.transform.rotation);
         codeNumber.transform.position += CodeNumberOffset;

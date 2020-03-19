@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class RespawnZoneController : MonoBehaviour
 {
-    public Vector3 RespawnPosition;
+    public Vector3 RespawnPosition; // When player falls down energy orb hole
 }

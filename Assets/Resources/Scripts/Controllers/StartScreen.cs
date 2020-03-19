@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class StartScreen : MonoBehaviour
 {
-    
-
     // Update is called once per frame
     private void Update()
     {

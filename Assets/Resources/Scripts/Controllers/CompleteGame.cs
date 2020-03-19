@@ -27,13 +27,13 @@ public class CompleteGame : MonoBehaviour
         _rabbitCounter = -1;
         RabbitsKilled = 0;
 
-        foreach (Transform rabbitContainer in RabbitContainers)
+        foreach (Transform rabbitContainer in RabbitContainers) // Get number of rabbits before any killed
             _rabbits += rabbitContainer.childCount;
     }
 
     private void Update()
     {
-        _time += Time.deltaTime;
+        _time += Time.deltaTime; // Time in level from entry, including tutorial
     }
 
     public void CalculateScore()
@@ -49,7 +49,7 @@ public class CompleteGame : MonoBehaviour
 
         FindObjectOfType<AudioManager>().PlayAudio("bloodSplat");
 
-        Invoke(_rabbitCounter == RabbitsKilled ? "DisplayTime" : "AddRabbit", TimeBetweenScoreDisplayUpdate);
+        Invoke(_rabbitCounter == RabbitsKilled ? "DisplayTime" : "AddRabbit", TimeBetweenScoreDisplayUpdate); // If counted all rabbits move on to next score section
     }
 
     private void DisplayTime()
@@ -64,7 +64,7 @@ public class CompleteGame : MonoBehaviour
     {
         FindObjectOfType<AudioManager>().PlayAudio("bloodSplat");
 
-        _multiplier = decimal.Round((decimal) ((_rabbits - RabbitsKilled) / _rabbits) + 1, 1);
+        _multiplier = decimal.Round((decimal) ((_rabbits - RabbitsKilled) / _rabbits) + 1, 1); // Percentage out of 12
 
         MultiplierText.text += _multiplier + "x";
 

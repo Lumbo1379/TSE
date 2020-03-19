@@ -21,7 +21,7 @@ public class ActivateLaserConduit : MonoBehaviour
         _newMaterialInstance.SetColor("_EmissiveColor", StartColour);
     }
 
-    private void Update()
+    private void Update() // Similar to pressure pad but opens door when fully activated, no attraction as well
     {
         if (_isActive)
         {

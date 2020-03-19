@@ -28,14 +28,14 @@ public class ButtonScreenController : MonoBehaviour
         //button noise
         FindObjectOfType<AudioManager>().PlayAudio("ButtonPress");
 
-        if (_blockInput)
+        if (_blockInput) // If code wrong wait a little or if correct code entered block further input
             return;
 
         _key++;
 
         Vector3 instantiatePos;
 
-        instantiatePos = code == "1" ? new Vector3(-0.0419f, 0, 0.05f) : Vector3.zero;
+        instantiatePos = code == "1" ? new Vector3(-0.0419f, 0, 0.05f) : Vector3.zero; // One needs to moved differently to fit properly
 
         switch (_key)
         {
@@ -66,7 +66,7 @@ public class ButtonScreenController : MonoBehaviour
 
     private void CheckCode()
     {
-        if (_inputCode == Code)
+        if (_inputCode == Code) // If code correct, change panel to green, open door and block further input
         {
             _blockInput = true;
             DoubleSlidingDoorController.Open = true;
@@ -80,7 +80,7 @@ public class ButtonScreenController : MonoBehaviour
 
     }
 
-    private void ResetKeyPad()
+    private void ResetKeyPad() // Flicker keypad and block input for 2 seconds
     {
         _blockInput = true;
         _inputCode = "";

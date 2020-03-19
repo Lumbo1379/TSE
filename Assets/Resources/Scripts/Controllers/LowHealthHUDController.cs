@@ -18,6 +18,6 @@ public class LowHealthHUDController : MonoBehaviour
 
     private void Update()
     {
-        _panelHUD.color = new Color32(Convert.ToByte(StartColour.r), Convert.ToByte(StartColour.g), Convert.ToByte(StartColour.b), Convert.ToByte(Mathf.Abs(OxygenMeter.Oxygen - 100) / 10));
+        _panelHUD.color = new Color32(Convert.ToByte(StartColour.r), Convert.ToByte(StartColour.g), Convert.ToByte(StartColour.b), Convert.ToByte(Mathf.Abs(OxygenMeter.Oxygen - 100) / 10)); // Make screen more red the less oxygen player has
     }
 }

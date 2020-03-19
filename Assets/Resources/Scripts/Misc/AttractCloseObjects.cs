@@ -21,9 +21,9 @@ public class AttractCloseObjects : MonoBehaviour
 
     private void FixedUpdate()
     {
-        foreach (Collider collider in Physics.OverlapSphere(transform.position, PullRadius))
+        foreach (Collider collider in Physics.OverlapSphere(transform.position, PullRadius)) // For every collider in radius
         {
-            if (collider.CompareTag("EnergyOrb"))
+            if (collider.CompareTag("EnergyOrb")) // If collider has tag energy orb, attract
             {
                 Vector3 direction = transform.position - collider.transform.position;
                 collider.GetComponent<Rigidbody>().AddForce(direction.normalized * _runningForce * Time.fixedDeltaTime);
@@ -32,7 +32,7 @@ public class AttractCloseObjects : MonoBehaviour
 
         if (!_attract)
         {
-            if (_runningForce > 0)
+            if (_runningForce > 0) // Gradually relinquish attract force
             {
                 _runningForce -= ForceReducation * Time.deltaTime;
                 _runningForce = Mathf.Clamp(_runningForce, 0, PullForce);
@@ -42,7 +42,7 @@ public class AttractCloseObjects : MonoBehaviour
 
     public void OnActiveDisableAttract()
     {
-        if (!ConstantAttract)
+        if (!ConstantAttract) // Disable attract if not checked to constantly attract
             Invoke("DisableAttract", DisableAttractDelay);
     }
 

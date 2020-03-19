@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class OSourceLink : MonoBehaviour
 {
-    public GameObject Rabbit;
+    public GameObject Rabbit; // Link to rabbit inside cage
 }

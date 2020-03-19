@@ -17,6 +17,6 @@ public class Levitate : MonoBehaviour
 
     private void Update()
     {
-        transform.localPosition = new Vector3(transform.localPosition.x, _startY + (float)Math.Sin(Time.time * Speed) * LevitateStrength, transform.localPosition.z);
+        transform.localPosition = new Vector3(transform.localPosition.x, _startY + (float)Math.Sin(Time.time * Speed) * LevitateStrength, transform.localPosition.z); // Levitate along a sine curve
     }
 }

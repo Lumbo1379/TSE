@@ -14,11 +14,11 @@ public class CharacterControllerHitDetection : MonoBehaviour
         _controller = GetComponent<CharacterController>();
     }
 
-    private void OnControllerColliderHit(ControllerColliderHit hit)
+    private void OnControllerColliderHit(ControllerColliderHit hit) // Move objects when player collides with them
     {
         var body = hit.collider.attachedRigidbody;
 
-        if (body == null || body.isKinematic)
+        if (body == null || body.isKinematic) // If object can move
             return;
 
         if (hit.moveDirection.y < -0.3)

@@ -11,7 +11,7 @@ public class HologramFadeIn : MonoBehaviour
 
     private void Start()
     {
-        _currentFadeInValue = 0.55f;
+        _currentFadeInValue = 0.55f; // Invisible
         _hologramMaterialInstance = GetComponent<Renderer>().material;
     }
 
@@ -20,7 +20,7 @@ public class HologramFadeIn : MonoBehaviour
         if (FadeInSpeed > 0)
         {
             _currentFadeInValue -= FadeInSpeed;
-            _currentFadeInValue = Mathf.Clamp(_currentFadeInValue, 0, 0.55f);
+            _currentFadeInValue = Mathf.Clamp(_currentFadeInValue, 0, 0.55f); // Don't go below 0
 
 
             _hologramMaterialInstance.SetFloat("Vector1_112413B2", _currentFadeInValue);

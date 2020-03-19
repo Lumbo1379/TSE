@@ -17,22 +17,22 @@ public class KyleFadeOut : MonoBehaviour
         _hologramMaterialInstance = GetComponent<Renderer>().material;
     }
 
-    private void Update()
+    private void Update() // Opposite of code number pressure pad fade in
     {
         if (FadeInSpeed > 0 && _fadeOut)
         {
             _currentFadeInValue += FadeInSpeed;
-            _currentFadeInValue = Mathf.Clamp(_currentFadeInValue, 0, 0.6f);
+            _currentFadeInValue = Mathf.Clamp(_currentFadeInValue, 0, 0.6f); // Max is 0.6f (invisible)
 
 
             _hologramMaterialInstance.SetFloat("Vector1_112413B2", _currentFadeInValue);
         }
 
-        if (_currentFadeInValue >= 0.6f)
+        if (_currentFadeInValue >= 0.6f) // Destroy when invisible
             Destroy(transform.parent.gameObject);
     }
 
-    public void FadeOut()
+    public void FadeOut() // Called when tutorial finished
     {
         _fadeOut = true;
     }

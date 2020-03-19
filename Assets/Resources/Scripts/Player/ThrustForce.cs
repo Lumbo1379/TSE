@@ -27,7 +27,7 @@ public class ThrustForce : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0)) // Stop animation if no longer pressing down force power button
         {
             _iKControl.IKActive = false;
             _iKControl.LookObject = null;
@@ -41,7 +41,7 @@ public class ThrustForce : MonoBehaviour
         RaycastHit hit;
         Ray ray = Camera.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(ray, out hit, Range))
+        if (Physics.Raycast(ray, out hit, Range)) // If hits something in range
         {
             _iKControl.IKActive = true;
             _iKControl.LookObject = hit.transform;
@@ -49,13 +49,13 @@ public class ThrustForce : MonoBehaviour
 
             _animator.SetBool("isForcing", true);
 
-            foreach (var collider in ScanForColliders(hit.point))
+            foreach (var collider in ScanForColliders(hit.point)) // Thrust objects in a radius of the ray impact
             {
                 if (collider.transform.CompareTag("Moveable") || collider.transform.CompareTag("OSourceLink") || collider.transform.CompareTag("EnergyOrb"))
                     ThrustObject(hit.point, collider.gameObject, hit.distance);
             }
         }
-        else
+        else // If nothing in range
         {
             _iKControl.IKActive = false;
             _iKControl.LookObject = null;
@@ -65,7 +65,7 @@ public class ThrustForce : MonoBehaviour
         }
     }
 
-    private void ThrustObject(Vector3 hitPosition, GameObject obj, float distanceAway)
+    private void ThrustObject(Vector3 hitPosition, GameObject obj, float distanceAway) // Apply force to object in relation to player
     {
         FindObjectOfType<AudioManager>().PlayAudio("forcePower");
         var fallOff = (Range - distanceAway) / Range;
@@ -75,7 +75,7 @@ public class ThrustForce : MonoBehaviour
         rb.AddForce(direction * Thrust * fallOff);
     }
 
-    private Collider[] ScanForColliders(Vector3 hit)
+    private Collider[] ScanForColliders(Vector3 hit) // Look for colliders in force radius
     {
         return Physics.OverlapSphere(hit, ThrustForceArea);
     }

@@ -31,17 +31,17 @@ public class DialogueController : MonoBehaviour
 
     private void Start()
     {
-        FindObjectOfType<AudioManager>().PlayAudio("MainTheme");
+        FindObjectOfType<AudioManager>().PlayAudio("MainTheme"); // Play main theme when tutorial begins (level starts)
     }
 
     private void Update()
     {
-        if (_incrementer < AudioSource.Length)
+        if (_incrementer < AudioSource.Length) // While there is more text to display
         {
             if (Input.GetKeyDown(KeyToContinue[_incrementer]))
             {
-                AudioSource[_incrementer].Stop();
-                Text[_incrementer].SetActive(false);
+                AudioSource[_incrementer].Stop(); // Stop previous audio if skipped before finished
+                Text[_incrementer].SetActive(false); 
 
                 _incrementer++;
 
@@ -49,10 +49,10 @@ public class DialogueController : MonoBehaviour
                     Text[_incrementer].SetActive(true);
                 else
                 {
-                    Player.Speed = _playerSpeed;
+                    Player.Speed = _playerSpeed; // Allow player to move and jump
                     Player.StartSpeed = _playerSpeed;
                     Player.JumpHeight = _playerJumpHeight;
-                    OxygenMeter.BeginDepletingOxygen();
+                    OxygenMeter.BeginDepletingOxygen(); // Start losing oxygen
                     Kyle.FadeOut();
                     gameObject.SetActive(false);
                 }

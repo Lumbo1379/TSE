@@ -16,10 +16,10 @@ public class TriggerCompletePanel : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.CompareTag("Player") && !_triggered)
+        if (other.transform.CompareTag("Player") && !_triggered) // If move into last area show score
         {
             _triggered = true;
-            OxygenMeter.enabled = false;
+            OxygenMeter.enabled = false; // Stop playing dying from oxygen loss
             ScoreAnimator.SetTrigger("Complete");
         }
     }

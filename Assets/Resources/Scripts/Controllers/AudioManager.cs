@@ -59,7 +59,8 @@ public class AudioManager : MonoBehaviour
         Sound s = Array.Find(sounds, sound => sound.name == name);
         s.src.volume = s.volume;
     }
-
+    
+    //Ends track
     public void End(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);

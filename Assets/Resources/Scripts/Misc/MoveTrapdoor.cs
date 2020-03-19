@@ -24,9 +24,9 @@ public class MoveTrapdoor : MonoBehaviour, IInteractable
 
     private void Update()
     {
-        transform.localPosition = Vector3.MoveTowards(transform.localPosition, _buttonTarget, MoveSpeed / 10 * Time.deltaTime);
+        transform.localPosition = Vector3.MoveTowards(transform.localPosition, _buttonTarget, MoveSpeed / 10 * Time.deltaTime); // Move button downwards when pressed
 
-        Trapdoor.transform.localPosition = Vector3.MoveTowards(Trapdoor.transform.localPosition, _currentTarget, MoveSpeed * Time.deltaTime);
+        Trapdoor.transform.localPosition = Vector3.MoveTowards(Trapdoor.transform.localPosition, _currentTarget, MoveSpeed * Time.deltaTime);  // Move trapdoor towards target
     }
 
     public void Interact()
@@ -34,13 +34,13 @@ public class MoveTrapdoor : MonoBehaviour, IInteractable
         _currentTarget = TargetPosition;
         FindObjectOfType<AudioManager>().PlayAudio("ButtonPress");
         AnimateButtonPress();
-        CancelInvoke("ResetTrapdoor");
+        CancelInvoke("ResetTrapdoor"); // Reset timer for trapdoor to reset
         Invoke("ResetTrapdoor", ResetTime);
     }
 
     private void ResetTrapdoor()
     {
-        _currentTarget = ResetPosition;
+        _currentTarget = ResetPosition; // Set target to original position
     }
 
     private void AnimateButtonPress()

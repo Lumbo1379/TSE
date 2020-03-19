@@ -18,7 +18,7 @@ public class MoveMirror : MonoBehaviour, IInteractable
 
     private void Update()
     {
-        transform.rotation = Quaternion.Lerp(transform.rotation, _rotateTo, RotationSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Lerp(transform.rotation, _rotateTo, RotationSpeed * Time.deltaTime); // Smooth rotate
     }
 
     public void Interact()
