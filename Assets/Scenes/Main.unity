@@ -20955,6 +20955,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef6b5ec84fe6f416099333b23f6f201d, type: 3}
+--- !u!1 &1195877510
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1195877511}
+  m_Layer: 11
+  m_Name: Force Area
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1195877511
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195877510}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1628479369}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1196032309 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4715545187306412, guid: eaf00e58f8a484c37bef75eb300e4645,
@@ -29763,6 +29793,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4715545187306412, guid: eaf00e58f8a484c37bef75eb300e4645,
     type: 3}
   m_PrefabInstance: {fileID: 1626458838}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1628479369 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5270209858753631289, guid: 867e0adc2c101434791423b4ae5ac443,
+    type: 3}
+  m_PrefabInstance: {fileID: 8241241570949581221}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1631661766
 PrefabInstance:
@@ -41443,6 +41479,18 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.000000007450565
+      objectReference: {fileID: 0}
+    - target: {fileID: 657536400, guid: 867e0adc2c101434791423b4ae5ac443, type: 3}
+      propertyPath: ForceOrb
+      value: 
+      objectReference: {fileID: 1195877510}
+    - target: {fileID: 657536400, guid: 867e0adc2c101434791423b4ae5ac443, type: 3}
+      propertyPath: ForceArea
+      value: 
+      objectReference: {fileID: 1195877510}
+    - target: {fileID: 657536400, guid: 867e0adc2c101434791423b4ae5ac443, type: 3}
+      propertyPath: ThrustForceArea
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 867e0adc2c101434791423b4ae5ac443, type: 3}

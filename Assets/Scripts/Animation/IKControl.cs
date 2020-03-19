@@ -5,7 +5,7 @@ using UnityEngine;
 public class IKControl : MonoBehaviour
 {
     public bool IKActive { get; set; }
-    public Transform RightHand { get; set; }
+    public Vector3? RightHand { get; set; }
     public Transform LookObject { get; set; }
 
     private Animator _animator;
@@ -30,7 +30,7 @@ public class IKControl : MonoBehaviour
                 {
                     _animator.SetIKPositionWeight(AvatarIKGoal.RightHand, 0.25f);
                     //_animator.SetIKRotationWeight(AvatarIKGoal.RightHand, 1);
-                    _animator.SetIKPosition(AvatarIKGoal.RightHand, RightHand.position);
+                    _animator.SetIKPosition(AvatarIKGoal.RightHand, (Vector3)RightHand);
                     //_animator.SetIKRotation(AvatarIKGoal.RightHand, RightHand.rotation);
                 }
 

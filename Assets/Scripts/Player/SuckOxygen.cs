@@ -95,7 +95,7 @@ public class SuckOxygen : MonoBehaviour
 
             _iKControl.IKActive = true;
             _iKControl.LookObject = _currentSelection.transform;
-            _iKControl.RightHand = _currentSelection.transform;
+            _iKControl.RightHand = _currentSelection.transform.position;
 
             var animator = collision.parent.GetComponent<Animator>();
             animator.SetBool("Balloon", true);

@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class ThrustForce : MonoBehaviour
 {
     [Range(0, 10)] public float Thrust;
     [Range(0, 100)] public float Range;
+    [Range(0, 3)] public float ThrustForceArea;
     public Camera Camera;
 
     private Animator _animator;
@@ -41,30 +43,25 @@ public class ThrustForce : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, Range))
         {
-            if (hit.transform.CompareTag("Moveable") || hit.transform.CompareTag("OSourceLink") || hit.transform.CompareTag("EnergyOrb")) // CompareTag is quicker than == "Some tag"
+            _iKControl.IKActive = true;
+            _iKControl.LookObject = hit.transform;
+            _iKControl.RightHand = hit.point;
+
+            _animator.SetBool("isForcing", true);
+
+            foreach (var collider in ScanForColliders(hit.point))
             {
-                
-                _iKControl.IKActive = true;
-                _iKControl.LookObject = hit.transform;
-                _iKControl.RightHand = hit.transform;
-
-                
-                _animator.SetBool("isForcing", true);
-                ThrustObject(hit.point, hit.transform.gameObject, hit.distance);
-
-                if(hit.transform.CompareTag("Moveable")) //makes appropriate sounds for moveable objects
-                {
-                    //FindObjectOfType<AudioManager>().PlayAudio("Crash");
-                }
+                if (collider.transform.CompareTag("Moveable") || collider.transform.CompareTag("OSourceLink") || collider.transform.CompareTag("EnergyOrb"))
+                    ThrustObject(hit.point, collider.gameObject, hit.distance);
             }
-            else
-            {
-                _iKControl.IKActive = false;
-                _iKControl.LookObject = null;
-                _iKControl.RightHand = null;
+        }
+        else
+        {
+            _iKControl.IKActive = false;
+            _iKControl.LookObject = null;
+            _iKControl.RightHand = null;
 
-                _animator.SetBool("isForcing", false);
-            }
+            _animator.SetBool("isForcing", false);
         }
     }
 
@@ -76,5 +73,10 @@ public class ThrustForce : MonoBehaviour
         var direction = obj.transform.position - transform.position;
 
         rb.AddForce(direction * Thrust * fallOff);
+    }
+
+    private Collider[] ScanForColliders(Vector3 hit)
+    {
+        return Physics.OverlapSphere(hit, ThrustForceArea);
     }
 }
