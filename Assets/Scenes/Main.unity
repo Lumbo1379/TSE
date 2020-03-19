@@ -39667,6 +39667,42 @@ PrefabInstance:
       propertyPath: RabbitDeathCounter
       value: 
       objectReference: {fileID: 795953508}
+    - target: {fileID: 1523311644, guid: 867e0adc2c101434791423b4ae5ac443, type: 3}
+      propertyPath: RegularColour.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1523311644, guid: 867e0adc2c101434791423b4ae5ac443, type: 3}
+      propertyPath: RegularColour.r
+      value: 0.5471698
+      objectReference: {fileID: 0}
+    - target: {fileID: 1523311644, guid: 867e0adc2c101434791423b4ae5ac443, type: 3}
+      propertyPath: RegularColour.g
+      value: 0.5471698
+      objectReference: {fileID: 0}
+    - target: {fileID: 1523311644, guid: 867e0adc2c101434791423b4ae5ac443, type: 3}
+      propertyPath: RegularColour.b
+      value: 0.5471698
+      objectReference: {fileID: 0}
+    - target: {fileID: 1523311644, guid: 867e0adc2c101434791423b4ae5ac443, type: 3}
+      propertyPath: InteractableInRangeColour.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1523311644, guid: 867e0adc2c101434791423b4ae5ac443, type: 3}
+      propertyPath: InteractableInRangeColour.r
+      value: 0.41960788
+      objectReference: {fileID: 0}
+    - target: {fileID: 1523311644, guid: 867e0adc2c101434791423b4ae5ac443, type: 3}
+      propertyPath: InteractableInRangeColour.g
+      value: 0.4735067
+      objectReference: {fileID: 0}
+    - target: {fileID: 1523311644, guid: 867e0adc2c101434791423b4ae5ac443, type: 3}
+      propertyPath: InteractableInRangeColour.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1523311644, guid: 867e0adc2c101434791423b4ae5ac443, type: 3}
+      propertyPath: CrossHair
+      value: 
+      objectReference: {fileID: 1748638344}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 867e0adc2c101434791423b4ae5ac443, type: 3}
 --- !u!1001 &8250462072553806831
