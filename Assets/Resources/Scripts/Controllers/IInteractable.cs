@@ -4,5 +4,5 @@ using UnityEngine;
 
 interface IInteractable
 {
-    void Interact(); // All interactables inherit this
+    void Interact(); // All interactables implement this
 }
